@@ -165,16 +165,6 @@
         "fr": "Culasse",
         "models": "QQ372",
         "unit": "PCS"
-      },
-      {
-        "zh": "大凸机",
-        "en": "ENGINE",
-        "fr": "",
-        "code": "2131233123",
-        "oe": "",
-        "unit": "PCS",
-        "models": "",
-        "image": ""
       }
     ]
   },
