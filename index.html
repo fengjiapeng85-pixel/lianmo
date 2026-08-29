@@ -1,0 +1,844 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
+  <link rel="icon" type="image/png" sizes="64x64" href="favicon-64.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta name="description" content="联摩汽配 汽车配件产品目录 | Catalogue des Pièces Automobiles | Auto Parts Catalog">
+<title>联摩汽配 · 产品目录 Catalogue</title>
+<link rel="preconnect" href="https://miaoda.feishu.cn">
+<link rel="stylesheet" href="https://miaoda.feishu.cn/fonts/css2?family=Barlow+Condensed:wght@500;600;700&family=Noto+Sans+SC:wght@400;500;700&display=swap">
+<style>
+:root{
+  --graphite:#1B2027;
+  --graphite-2:#232A33;
+  --graphite-3:#2C3540;
+  --ink:#20242B;
+  --paper:#F2F3F0;
+  --card:#FFFFFF;
+  --line:#E1E4DF;
+  --amber:#E8860C;
+  --amber-deep:#C96E06;
+  --amber-soft:#FCEAD3;
+  --red:#B3261E;
+  --green:#3E7A4E;
+  --muted:#66707C;
+  --muted-2:#9AA3AD;
+  --white:#FFFFFF;
+  --shadow:0 1px 2px rgba(20,25,30,.05),0 8px 24px -12px rgba(20,25,30,.18);
+  --radius:14px;
+  --header-h:56px;
+  --toolbar-h:56px;
+  --display:'Barlow Condensed','Noto Sans SC','PingFang SC','Microsoft YaHei',sans-serif;
+  --body:'Noto Sans SC','Noto Sans','PingFang SC','Microsoft YaHei',system-ui,sans-serif;
+  --mono:ui-monospace,'SF Mono','Cascadia Mono','Segoe UI Mono',Consolas,monospace;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  font-family:var(--body);
+  color:var(--ink);
+  background:var(--paper);
+  line-height:1.55;
+  -webkit-font-smoothing:antialiased;
+  text-rendering:optimizeLegibility;
+}
+img{display:block;max-width:100%}
+button{font-family:inherit;cursor:pointer;border:none;background:none}
+input{font-family:inherit}
+a{color:inherit;text-decoration:none}
+
+/* ===== Header ===== */
+.site-header{
+  position:sticky;top:0;z-index:60;
+  height:var(--header-h);
+  background:rgba(27,32,39,.96);
+  backdrop-filter:blur(10px);
+  color:#fff;
+  border-bottom:1px solid rgba(255,255,255,.08);
+}
+.header-inner{
+  max-width:1200px;margin:0 auto;height:100%;
+  padding:0 18px;
+  display:flex;align-items:center;justify-content:space-between;gap:16px;
+}
+.brand{display:flex;align-items:center;gap:10px;min-width:0}
+.brand-mark{
+  width:34px;height:34px;flex:0 0 auto;border-radius:9px;
+  background:linear-gradient(140deg,var(--amber),var(--amber-deep));
+  display:flex;align-items:center;justify-content:center;
+}
+.brand-mark svg{width:20px;height:20px;stroke:#fff}
+.brand-name{font-family:var(--display);font-weight:700;font-size:20px;letter-spacing:.4px;line-height:1.1;white-space:nowrap}
+.brand-name small{display:block;font-family:var(--body);font-weight:500;font-size:10px;letter-spacing:2.4px;color:rgba(255,255,255,.55);text-transform:uppercase}
+.lang-switch{display:flex;align-items:center;gap:4px;background:rgba(255,255,255,.08);border-radius:999px;padding:3px}
+.lang-btn{
+  min-height:30px;min-width:40px;padding:0 10px;border-radius:999px;
+  font-size:12.5px;font-weight:700;color:rgba(255,255,255,.62);
+  letter-spacing:.4px;transition:.18s;
+}
+.lang-btn.active{background:var(--amber);color:#fff}
+
+/* ===== Toolbar: search + tabs ===== */
+.toolbar{
+  position:sticky;top:var(--header-h);z-index:50;
+  background:rgba(242,243,240,.94);backdrop-filter:blur(10px);
+  border-bottom:1px solid var(--line);
+}
+.toolbar-inner{max-width:1200px;margin:0 auto;padding:10px 18px}
+.search-box{
+  position:relative;display:flex;align-items:center;
+  background:var(--card);border:1px solid var(--line);border-radius:12px;
+  transition:.18s;box-shadow:0 1px 2px rgba(20,25,30,.03);
+}
+.search-box:focus-within{border-color:var(--amber);box-shadow:0 0 0 3px var(--amber-soft)}
+.search-box svg{position:absolute;left:12px;width:18px;height:18px;stroke:var(--muted-2);pointer-events:none}
+.search-box input{
+  width:100%;height:44px;padding:0 44px 0 40px;border:none;background:none;
+  font-size:14.5px;color:var(--ink);outline:none;
+}
+.search-box input::placeholder{color:var(--muted-2)}
+.search-clear{
+  position:absolute;right:6px;width:34px;height:34px;border-radius:9px;
+  display:none;align-items:center;justify-content:center;color:var(--muted);
+}
+.search-clear.show{display:flex}
+.search-clear:hover{background:var(--paper);color:var(--ink)}
+.search-clear svg{width:16px;height:16px;stroke:currentColor;position:static}
+
+.cat-tabs{
+  display:flex;flex-wrap:nowrap;gap:8px;margin-top:10px;
+  overflow-x:auto;overflow-y:hidden;-webkit-overflow-scrolling:touch;
+  scrollbar-width:thin;scrollbar-color:#c8cbc4 transparent;padding-bottom:4px;
+}
+.cat-tabs::-webkit-scrollbar{height:5px}
+.cat-tabs::-webkit-scrollbar-track{background:transparent}
+.cat-tabs::-webkit-scrollbar-thumb{background:#c8cbc4;border-radius:3px}
+.cat-tab{
+  flex:0 0 auto;display:inline-flex;align-items:center;gap:6px;
+  height:38px;padding:0 14px;border-radius:999px;
+  background:var(--card);border:1px solid var(--line);
+  font-size:13.5px;font-weight:600;color:var(--ink);
+  transition:.15s;white-space:nowrap;
+}
+.cat-tab:hover{border-color:var(--amber);color:var(--amber-deep)}
+.cat-tab.active{background:var(--graphite);border-color:var(--graphite);color:#fff}
+.cat-tab .cnt{
+  font-family:var(--display);font-size:12.5px;font-weight:600;
+  background:rgba(20,25,30,.07);color:var(--muted);
+  border-radius:999px;padding:0 7px;line-height:18px;
+}
+.cat-tab.active .cnt{background:rgba(255,255,255,.16);color:#fff}
+
+/* ===== Hero ===== */
+.hero{
+  position:relative;overflow:hidden;color:#fff;
+  background:var(--graphite);
+}
+.hero-bg{
+  position:absolute;inset:0;
+  background:linear-gradient(90deg,rgba(18,22,28,.92) 0%,rgba(18,22,28,.55) 55%,rgba(18,22,28,.35) 100%),
+              url('https://aka.doubaocdn.com/s/0UPnQQHQjV') center/cover no-repeat;
+}
+.hero-bg::after{
+  content:"";position:absolute;inset:0;
+  background:linear-gradient(180deg,transparent 60%,rgba(27,32,39,.9) 100%);
+}
+.hero-inner{
+  position:relative;z-index:2;max-width:1200px;margin:0 auto;
+  padding:64px 18px 88px;
+}
+.hero-kicker{
+  display:inline-flex;align-items:center;gap:8px;
+  font-size:12px;font-weight:700;letter-spacing:2.5px;text-transform:uppercase;
+  color:var(--amber);margin-bottom:16px;
+}
+.hero-kicker::before{content:"";width:26px;height:2px;background:var(--amber)}
+.hero h1{
+  font-family:var(--display);font-weight:700;
+  font-size:clamp(40px,7.5vw,72px);line-height:1.02;letter-spacing:.5px;
+}
+.hero h1 .hl{color:var(--amber)}
+.hero-sub{
+  margin-top:14px;max-width:640px;
+  font-size:clamp(14px,2vw,17px);color:rgba(255,255,255,.82);font-weight:400;
+}
+.hero-sub em{font-style:normal;color:rgba(255,255,255,.55);font-size:.92em}
+.hero-stats{
+  display:flex;flex-wrap:wrap;gap:0;margin-top:36px;
+  border:1px solid rgba(255,255,255,.14);border-radius:var(--radius);
+  background:rgba(255,255,255,.05);backdrop-filter:blur(6px);
+  overflow:hidden;max-width:560px;
+}
+.stat{flex:1 1 0;min-width:120px;padding:16px 20px;border-right:1px solid rgba(255,255,255,.12)}
+.stat:last-child{border-right:none}
+.stat b{font-family:var(--display);font-weight:700;font-size:34px;color:var(--amber);line-height:1}
+.stat span{display:block;margin-top:5px;font-size:12px;letter-spacing:1px;color:rgba(255,255,255,.7);text-transform:uppercase}
+
+/* ===== Catalog ===== */
+.catalog{max-width:1200px;margin:0 auto;padding:28px 18px 60px}
+.section-head{
+  display:flex;align-items:baseline;justify-content:space-between;gap:12px;
+  margin-bottom:18px;
+}
+.section-head h2{font-family:var(--display);font-weight:600;font-size:26px;letter-spacing:.3px}
+.section-head .count{font-size:13.5px;color:var(--muted);font-weight:500;white-space:nowrap}
+.result-line{display:flex;align-items:center;gap:8px;font-size:13.5px;color:var(--muted);margin-bottom:16px}
+.result-line b{font-family:var(--display);font-size:18px;color:var(--amber-deep)}
+
+.grid{
+  display:grid;grid-template-columns:repeat(auto-fill,minmax(252px,1fr));gap:16px;
+}
+
+/* parts-tag card */
+.card{
+  position:relative;background:var(--card);border:1px solid var(--line);border-radius:var(--radius);
+  padding:16px;display:flex;flex-direction:column;gap:10px;
+  transition:transform .16s,box-shadow .16s,border-color .16s;
+  cursor:pointer;overflow:hidden;
+}
+.card:hover{transform:translateY(-3px);box-shadow:var(--shadow);border-color:#d4d8d2}
+.card:focus-visible{outline:3px solid var(--amber);outline-offset:2px}
+.card::before{
+  content:"";position:absolute;top:14px;right:14px;width:10px;height:10px;border-radius:50%;
+  background:radial-gradient(circle at 40% 35%,#6d7681 0%,#2c3540 70%);
+  box-shadow:inset 0 1px 1px rgba(255,255,255,.25),0 1px 2px rgba(0,0,0,.3);
+  z-index:2;
+}
+.card-img{
+  margin:-16px -16px 0 -16px;height:150px;overflow:hidden;position:relative;
+  background:#e8e9e5;
+}
+.card-img img{width:100%;height:100%;object-fit:cover;display:block}
+.card-img .img-tag{
+  position:absolute;bottom:8px;left:8px;
+  background:rgba(27,32,39,.78);color:#fff;
+  font-size:10px;font-weight:600;letter-spacing:.5px;
+  padding:2px 8px;border-radius:5px;
+}
+.modal-img{
+  width:100%;height:220px;object-fit:cover;border-radius:12px;
+  margin-bottom:14px;background:#e8e9e5;display:block;
+}
+.card-top{display:flex;align-items:center;justify-content:space-between;gap:8px}
+.chip{
+  display:inline-flex;align-items:center;height:22px;padding:0 9px;border-radius:6px;
+  font-size:11px;font-weight:700;letter-spacing:.3px;
+}
+.cat-chip{background:var(--amber-soft);color:var(--amber-deep)}
+.unit-chip{background:#EEF0F4;color:var(--muted);font-family:var(--display);letter-spacing:.6px}
+.card-icon{
+  width:52px;height:52px;border-radius:12px;flex:0 0 auto;
+  background:linear-gradient(145deg,#2C3540,#1B2027);
+  display:flex;align-items:center;justify-content:center;
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.1);
+}
+.card-icon svg{width:28px;height:28px;stroke:var(--amber)}
+.card-name{font-size:16.5px;font-weight:700;line-height:1.3}
+.card-name-en{font-size:11.5px;color:var(--muted);letter-spacing:.3px;text-transform:uppercase;font-weight:600}
+.code-plate{
+  margin-top:auto;display:flex;align-items:center;justify-content:space-between;gap:10px;
+  background:var(--graphite);border-radius:9px;padding:9px 12px;
+}
+.code-plate .cl{font-size:10px;color:rgba(255,255,255,.5);letter-spacing:1.4px;text-transform:uppercase}
+.code-plate .cv{
+  font-family:var(--mono);font-size:12.5px;font-weight:600;color:var(--amber);
+  word-break:break-all;text-align:right;
+}
+.card-meta{display:flex;flex-direction:column;gap:5px}
+.meta-row{display:flex;align-items:baseline;gap:8px;font-size:12px;color:var(--ink)}
+.meta-row .ml{flex:0 0 auto;color:var(--muted-2);font-size:11px;letter-spacing:.6px}
+.meta-row .mv{font-size:12px;line-height:1.45;min-width:0}
+.meta-row .mv .seg{display:inline-block;margin:0 2px 2px 0;padding:1px 7px;background:#F0F1EE;border-radius:5px;font-size:11.5px;color:#3d454f}
+
+.empty{
+  display:none;flex-direction:column;align-items:center;gap:12px;
+  padding:60px 20px;text-align:center;color:var(--muted);
+}
+.empty.show{display:flex}
+.empty svg{width:44px;height:44px;stroke:var(--muted-2)}
+.empty b{font-size:16px;color:var(--ink)}
+.empty p{font-size:13px;max-width:380px}
+
+/* ===== Footer ===== */
+.site-footer{background:var(--graphite);color:rgba(255,255,255,.7);margin-top:8px}
+.footer-inner{max-width:1200px;margin:0 auto;padding:40px 18px 32px}
+.footer-brand{margin-bottom:14px}
+.footer-brand b{font-family:var(--display);font-size:19px;color:#fff;letter-spacing:.4px}
+.footer-tag{font-size:12.5px;color:rgba(255,255,255,.55);max-width:640px;line-height:1.7;margin:0}
+.footer-langs{
+  display:flex;flex-wrap:wrap;gap:6px;margin-top:16px;
+}
+.footer-langs span{font-size:11px;letter-spacing:.6px;color:rgba(255,255,255,.45);background:rgba(255,255,255,.06);padding:3px 9px;border-radius:6px}
+.footer-note{margin-top:22px;padding-top:16px;border-top:1px solid rgba(255,255,255,.1);font-size:11.5px;color:rgba(255,255,255,.38)}
+
+/* ===== Modal ===== */
+.modal-mask{
+  position:fixed;inset:0;z-index:100;background:rgba(18,22,28,.55);
+  display:none;align-items:flex-end;justify-content:center;
+  backdrop-filter:blur(3px);
+}
+.modal-mask.show{display:flex}
+.modal{
+  width:100%;max-width:680px;max-height:88vh;overflow-y:auto;
+  background:var(--card);border-radius:20px 20px 0 0;
+  padding:22px 20px 26px;position:relative;animation:slideUp .24s ease;
+}
+@keyframes slideUp{from{transform:translateY(24px);opacity:0}to{transform:none;opacity:1}}
+@media(min-width:720px){
+  .modal-mask{align-items:center}
+  .modal{border-radius:20px;margin:0 16px}
+}
+.modal-close{
+  position:absolute;top:14px;right:14px;width:38px;height:38px;border-radius:11px;
+  display:flex;align-items:center;justify-content:center;color:var(--muted);
+  background:var(--paper);
+}
+.modal-close:hover{color:var(--ink)}
+.modal-close svg{width:18px;height:18px;stroke:currentColor}
+.modal-cat{display:inline-flex;align-items:center;height:24px;padding:0 10px;border-radius:7px;background:var(--amber-soft);color:var(--amber-deep);font-size:12px;font-weight:700}
+.modal h3{font-family:var(--display);font-weight:700;font-size:30px;line-height:1.15;margin:14px 0 2px}
+.modal .m-code{font-family:var(--mono);font-size:13px;color:var(--muted)}
+.modal .m-langs{margin-top:14px;border:1px solid var(--line);border-radius:12px;overflow:hidden}
+.m-langs .row{display:flex;align-items:baseline;gap:12px;padding:10px 14px;font-size:13.5px}
+.m-langs .row + .row{border-top:1px solid var(--line)}
+.m-langs .row .lg{flex:0 0 74px;font-size:11px;font-weight:700;color:var(--muted-2);letter-spacing:.6px;text-transform:uppercase}
+.m-langs .row .nm{font-weight:600}
+.m-grid{margin-top:16px;display:grid;grid-template-columns:1fr;gap:8px}
+@media(min-width:560px){.m-grid{grid-template-columns:1fr 1fr}}
+.m-cell{border:1px solid var(--line);border-radius:11px;padding:11px 13px;background:#FAFBF9}
+.m-cell .t{font-size:11px;color:var(--muted-2);letter-spacing:.6px;margin-bottom:3px}
+.m-cell .v{font-size:13.5px;font-weight:600;word-break:break-all}
+.m-cell .v .seg{display:inline-block;margin:2px 3px 0 0;padding:2px 9px;background:var(--paper);border:1px solid var(--line);border-radius:7px;font-size:12px;font-weight:500;color:#3d454f}
+.modal-nav{margin-top:18px;display:flex;gap:10px}
+.modal-nav button{
+  flex:1;height:44px;border-radius:11px;font-size:13.5px;font-weight:700;
+  background:var(--paper);color:var(--ink);border:1px solid var(--line);
+  transition:.15s;
+}
+.modal-nav button:hover{border-color:var(--amber);color:var(--amber-deep)}
+.modal-nav button:disabled{opacity:.4;cursor:default;border-color:var(--line);color:var(--muted-2)}
+
+/* ===== Back to top ===== */
+.to-top{
+  position:fixed;right:18px;bottom:22px;z-index:40;
+  width:46px;height:46px;border-radius:14px;background:var(--graphite);color:#fff;
+  display:flex;align-items:center;justify-content:center;
+  box-shadow:var(--shadow);opacity:0;pointer-events:none;transform:translateY(8px);
+  transition:.2s;
+}
+.to-top.show{opacity:1;pointer-events:auto;transform:none}
+.to-top svg{width:20px;height:20px;stroke:currentColor}
+
+@media (prefers-reduced-motion:reduce){
+  *{animation:none!important;transition:none!important;scroll-behavior:auto!important}
+}
+@media(max-width:560px){
+  .brand-name{font-size:18px}
+  .brand-name small{font-size:9px;letter-spacing:1.8px}
+  .hero-inner{padding:44px 18px 66px}
+  .stat{padding:13px 14px}
+  .stat b{font-size:28px}
+  .section-head h2{font-size:22px}
+}
+
+/* Hide Netlify badge */
+a[class*="netlify"],a[href*="netlify.com"],div[class*="netlify"],iframe[src*="netlify"]{display:none!important}
+</style>
+</head>
+<body>
+
+<!-- ===== Header ===== -->
+<header class="site-header">
+  <div class="header-inner">
+    <div class="brand" aria-label="LIANMO AUTO PARTS">
+      <span class="brand-name">LIANMO AUTO PARTS</span>
+    </div>
+    <div class="lang-switch" role="group" aria-label="Language">
+      <button class="lang-btn" data-lang="zh" aria-pressed="true">中文</button>
+      <button class="lang-btn" data-lang="en" aria-pressed="false">EN</button>
+      <button class="lang-btn" data-lang="fr" aria-pressed="false">FR</button>
+    </div>
+  </div>
+</header>
+
+<!-- ===== Toolbar ===== -->
+<nav class="toolbar" aria-label="目录导航">
+  <div class="toolbar-inner">
+    <div class="search-box">
+      <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" aria-hidden="true">
+        <circle cx="11" cy="11" r="6.5"/>
+        <path d="M16 16l4.5 4.5"/>
+      </svg>
+      <input id="search" type="search" autocomplete="off" placeholder="搜索产品名称 / 编号 / OE号 / 车型…">
+      <button class="search-clear" id="searchClear" aria-label="清空搜索">
+        <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"/></svg>
+      </button>
+    </div>
+    <div class="cat-tabs" id="catTabs" role="tablist" aria-label="产品分类"></div>
+  </div>
+</nav>
+
+<!-- ===== Hero ===== -->
+<section class="hero">
+  <div class="hero-bg" aria-hidden="true"></div>
+  <div class="hero-inner">
+    <h1>LIANMO AUTO PARTS <span class="hl" data-i18n="heroTitle">产品目录</span></h1>
+    <div class="hero-stats" aria-label="目录概览">
+      <div class="stat"><b>8</b><span data-i18n="statCat">系统分类</span></div>
+      <div class="stat"><b>90</b><span data-i18n="statItem">产品条目</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== Catalog ===== -->
+<div id="loadingTip" style="display:none;position:fixed;inset:0;background:rgba(255,255,255,.95);z-index:9999;align-items:center;justify-content:center;flex-direction:column;gap:16px">
+  <div style="width:40px;height:40px;border:3px solid #e0e0e0;border-top-color:#E8AA36;border-radius:50%;animation:spin 1s linear infinite"></div>
+  <p style="color:#666;font-size:14px;letter-spacing:.5px">正在加载产品数据…</p>
+</div>
+<style>@keyframes spin{to{transform:rotate(360deg)}}</style>
+<main class="catalog">
+  <div class="section-head">
+    <h2 id="secTitle">全部产品</h2>
+    <span class="count" id="secCount"></span>
+  </div>
+  <div class="result-line" id="resultLine"></div>
+  <div class="grid" id="grid"></div>
+  <div class="empty" id="empty">
+    <svg viewBox="0 0 24 24" fill="none" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+      <circle cx="11" cy="11" r="6.5"/>
+      <path d="M16 16l4.5 4.5M8 11h6"/>
+    </svg>
+    <b data-i18n="noResult">未找到匹配的产品</b>
+    <p data-i18n="noResultHint">请尝试其他关键词，或切换分类查看全部产品。</p>
+  </div>
+</main>
+
+<!-- ===== Footer ===== -->
+<footer class="site-footer">
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <b>联摩汽配 · Lianmo Auto Parts</b>
+    </div>
+    <p class="footer-tag" data-i18n="footerTag">汽车配件产品目录 | Catalogue des Pièces Automobiles | Auto Parts Catalog</p>
+    <p class="footer-note" data-i18n="footerNote">产品信息与适用车型以最新报价为准；如需获取完整价目表或下单，请联系供应商确认。</p>
+  </div>
+</footer>
+
+<!-- ===== Modal ===== -->
+<div class="modal-mask" id="modalMask" role="dialog" aria-modal="true" aria-label="产品详情">
+  <div class="modal" id="modal">
+    <button class="modal-close" id="modalClose" aria-label="关闭">
+      <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"/></svg>
+    </button>
+    <img class="modal-img" id="mImg" alt="">
+    <span class="modal-cat" id="mCat"></span>
+    <h3 id="mName"></h3>
+    <div class="m-code" id="mCode"></div>
+    <div class="m-langs">
+      <div class="row"><span class="lg">中文</span><span class="nm" id="mZh"></span></div>
+      <div class="row"><span class="lg">English</span><span class="nm" id="mEn"></span></div>
+      <div class="row"><span class="lg">Français</span><span class="nm" id="mFr"></span></div>
+    </div>
+    <div class="m-grid">
+      <div class="m-cell"><div class="t" data-i18n="unit">单位</div><div class="v" id="mUnit"></div></div>
+      <div class="m-cell"><div class="t" data-i18n="seq">序号</div><div class="v" id="mSeq"></div></div>
+      <div class="m-cell" style="grid-column:1/-1"><div class="t" data-i18n="models">适用车型</div><div class="v" id="mModels"></div></div>
+    </div>
+    <div class="modal-nav">
+      <button id="mPrev" data-i18n="mPrev">上一件</button>
+      <button id="mNext" data-i18n="mNext">下一件</button>
+    </div>
+  </div>
+</div>
+
+<button class="to-top" id="toTop" aria-label="返回顶部">
+  <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 19V5M5 12l7-7 7 7"/></svg>
+</button>
+
+<script>
+/* ===== 数据：由 Excel《联摩汽配目录》提取（8 分类 · 90 条）===== */
+var CATALOG_DATA = [];
+/* ===== 分类图标（内联 SVG，stroke 风格统一）===== */
+var ICONS = [
+  '<svg viewBox="0 0 24 24" fill="none" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M3.5 8.5h17l-1.6 8.5H5.1z"/><circle cx="9" cy="8.5" r="2.1"/><circle cx="15" cy="8.5" r="2.1"/><path d="M6.5 17v2.5M12 17v2.5M17.5 17v2.5M8 12.5h8"/></svg>',
+  '<svg viewBox="0 0 24 24" fill="none" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3.4"/><path d="M12 4.6v3M12 16.4v3M4.6 12h3M16.4 12h3M6.9 6.9l2.1 2.1M15 15l2.1 2.1M17.1 6.9L15 9M9 15l-2.1 2.1"/></svg>',
+  '<svg viewBox="0 0 24 24" fill="none" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M3.5 8h8.5a3 3 0 0 1 3 3v2a3 3 0 0 1-3 3H3.5z"/><path d="M15.5 10h1.7a1.8 1.8 0 0 1 1.8 1.8v.4a1.8 1.8 0 0 1-1.8 1.8h-1.7"/><path d="M7.5 8.5v7M11 8.5v7"/><path d="M20 5l-1.6 1.6M23 8l-1.6 1.6"/></svg>',
+  '<svg viewBox="0 0 24 24" fill="none" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M3 15l1.8-4.6A2.2 2.2 0 0 1 6.9 9h4.2l3.2-3.2h2.4a1.6 1.6 0 0 1 1.6 1.6V9.6h1.2a1.9 1.9 0 0 1 1.9 1.9V16"/><circle cx="7.4" cy="16.6" r="2"/><circle cx="16.6" cy="16.6" r="2"/><path d="M7.4 14.6v-1M16.6 14.6v-1"/></svg>',
+  '<svg viewBox="0 0 24 24" fill="none" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="7.2"/><circle cx="12" cy="12" r="2.3"/><path d="M12 7.4v2M12 14.6v2M7.4 12h2M14.6 12h2"/><path d="M19.8 4.2l-3.1 3.1M20.6 9l-1.8.8"/></svg>',
+  '<svg viewBox="0 0 24 24" fill="none" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3.5v4.5"/><rect x="8.6" y="8" width="6.8" height="10.6" rx="2.2"/><path d="M12 18.6v2.4"/><path d="M4.6 12h4M15.4 12h4"/><path d="M6.8 9.5l-1.6-1.6M17.2 9.5l1.6-1.6"/></svg>',
+  '<svg viewBox="0 0 24 24" fill="none" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="3.6" y="4" width="10.4" height="16" rx="1.6"/><path d="M6.8 4v16M10.8 4v16"/><path d="M14 8h6.4M14 16h6.4"/><path d="M17.2 5.6v3.4M15.2 7.4h4"/><path d="M17.2 15.2v3M15.6 16.7h3.2"/></svg>',
+  '<svg viewBox="0 0 24 24" fill="none" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M13 3L6 13h5l-1 8 7-10h-5z"/><path d="M6.5 17.5H4M8 20.5H5.5"/></svg>'
+];
+/* ===== 产品图片（实拍图 + 分类兜底图）===== */
+var PRODUCT_IMAGES = {"LBDY1-4030":"https://aka.doubaocdn.com/s/ovUR8AZQg9","LB004-DFM1-1013":"https://aka.doubaocdn.com/s/IHQWniMN6r","LB007-DFM1-1108":"https://aka.doubaocdn.com/s/qWfbMNtr1V","LB014-DFM1-3009":"https://aka.doubaocdn.com/s/bVMq2aFE7G","LB004-DFM1-1017":"https://aka.doubaocdn.com/s/Jy6uVjp7Dc","LBDX-FGX-3210-B":"https://aka.doubaocdn.com/s/kMKfHNF4vz","LB007-DFM1-1107-HB":"https://aka.doubaocdn.com/s/bUWSX7D5UE","LBCH3-3022":"https://aka.doubaocdn.com/s/4AQnTJzbK1","LBDFM1-3087":"https://aka.doubaocdn.com/s/VAKXxNBccN","LB087-A3-0026":"https://aka.doubaocdn.com/s/gbglsZvi97","LB011-DFM1-2091-D":"https://aka.doubaocdn.com/s/85BspfEsU9","LB011-DFM1-2082-H1":"https://aka.doubaocdn.com/s/OBCsYfHLtm","LBDFM2-4024":"https://aka.doubaocdn.com/s/KR5nDFf8jV","LBDFM1-2231-26MM":"https://aka.doubaocdn.com/s/w53P8gWjFN","LBDY1-1061":"https://aka.doubaocdn.com/s/T0Tkr1DlHc","LB011-DFM1-2092-2":"https://aka.doubaocdn.com/s/kLXEzG6JR8","LB005-DFM1-1056":"https://aka.doubaocdn.com/s/QxRKsqCd5H","LB010-DFM1-2058-HE-SET":"https://aka.doubaocdn.com/s/aBaz9mzUJU","LB012-DFM1-2114-HE-SET":"https://aka.doubaocdn.com/s/drSNV0r3NI","LBHF1-2034":"https://aka.doubaocdn.com/s/3l1uP3gry2","LB010-DFM1-2054-AR":"https://aka.doubaocdn.com/s/V4Hkn1UXXv","LB010-DFM1-2054-AL":"https://aka.doubaocdn.com/s/6wDmT9Q3va","LB011-DFM1-2072":"https://aka.doubaocdn.com/s/1z9xaHKfZK","LBHF1-2035":"https://aka.doubaocdn.com/s/DM6MrH5UHt","LB013-DFM1-2154-A":"https://aka.doubaocdn.com/s/CdDcr9krfQ","LB013-DFM1-2155-A":"https://aka.doubaocdn.com/s/DHg57vkv1E","LB012-DFM1-2112-A":"https://aka.doubaocdn.com/s/T3PzxxShzA","LB013-DFM1-2135-BR":"https://aka.doubaocdn.com/s/a5U9yKkFKM","LB013-DFM1-2135-BL":"https://aka.doubaocdn.com/s/TLjzGsiDUK","LBDFM2-2003":"https://aka.doubaocdn.com/s/VU2SrpjF0s","LBLM3-3001-R":"https://aka.doubaocdn.com/s/oE7LVsJbFi","LBLM3-3001-L":"https://aka.doubaocdn.com/s/J4q3xTx9q8","LB016-DFM1-4037-SET":"https://aka.doubaocdn.com/s/XarqZlaUNz","LBDFM1-4151":"https://aka.doubaocdn.com/s/em5ziPVXiX","LB015-DFM1-4002":"https://aka.doubaocdn.com/s/HBDscJUigg","LB015-DFM1-4017-SET":"https://aka.doubaocdn.com/s/VsH3U5El85","LB018-DFM2-4003":"https://aka.doubaocdn.com/s/xCf5NT79FO","LBLM3-4013":"https://aka.doubaocdn.com/s/1aFhcP2510","LB016-DFM1-4027-1L":"https://aka.doubaocdn.com/s/aeKKy3wlPg","LB016-DFM1-4027-1R":"https://aka.doubaocdn.com/s/EyUZ2xzgQy","LB061-LM3-4004-1-R":"https://aka.doubaocdn.com/s/79DsKJKQZn","LB061-LM3-4004-1-L":"https://aka.doubaocdn.com/s/82mP2GZ0O7","LB061-LM3-4001":"https://aka.doubaocdn.com/s/NDJJhbwiay","LB017-DFM2-3001-R":"https://aka.doubaocdn.com/s/uU36C6CVPu","LB017-DFM2-3001-L":"https://aka.doubaocdn.com/s/5iVF9UjH5l","LB018-DFM2-3001-R":"https://aka.doubaocdn.com/s/n9YesLUqME","LB018-DFM2-3001-L":"https://aka.doubaocdn.com/s/Zob7SgTe9q","LB014-DFM1-3021":"https://aka.doubaocdn.com/s/n2tQp6OtpN","LBDFM1-1206":"https://aka.doubaocdn.com/s/wkT3xWmNUt","LB010-DFM1-2040-A":"https://aka.doubaocdn.com/s/0ZITbPFU0u","LB003-ENG-1061-A":"https://aka.doubaocdn.com/s/VQuTgOdNyA","LBDFM1-2197":"https://aka.doubaocdn.com/s/yV1vT0wgrN","LB012-DFM1-2107-A":"https://aka.doubaocdn.com/s/D4n6FCrWLd","LB050-DY1-1017":"https://aka.doubaocdn.com/s/PUfFEPqI4L","LB004-DFM1-1005":"https://aka.doubaocdn.com/s/Hnpuc7WMRe","LB007-DFM1-1116":"https://aka.doubaocdn.com/s/4boVgYqTd2","LBDY1-1074-0.50":"https://aka.doubaocdn.com/s/AY4HKo8om1","LBDY1-1073-0.50":"https://aka.doubaocdn.com/s/GUyytY9WID","LB008-DFM1-2006":"https://aka.doubaocdn.com/s/VZ7nE9vEOK","LB001-ENG-1020-A2":"https://aka.doubaocdn.com/s/tAL2ENVuEb","LB001-ENG-1011-A1":"https://aka.doubaocdn.com/s/0LDaRBvcz5","LB001-ENG-1012-2":"https://aka.doubaocdn.com/s/QYLUvBcWlV","LB001-ENG-1009-A1":"https://aka.doubaocdn.com/s/wjubRfYwGS","LB001-ENG-1049-1":"https://aka.doubaocdn.com/s/CEWflcSW6M","LB001-ENG-1005-A1":"https://aka.doubaocdn.com/s/DqIAos7S5f","LBENG-1093-A3":"https://aka.doubaocdn.com/s/LQK9wXK6CM"};
+var CAT_IMAGES = ["https://aka.doubaocdn.com/s/yrHkuRhUEd","https://aka.doubaocdn.com/s/MjtKI8cWag","https://aka.doubaocdn.com/s/MUlXvgxsx3","https://aka.doubaocdn.com/s/eyf38mfGQM","https://aka.doubaocdn.com/s/PNPBVLVUZE","https://aka.doubaocdn.com/s/rr9u6lPHVw","https://aka.doubaocdn.com/s/557pWre3Wt","https://aka.doubaocdn.com/s/zNxFWCyzA1"];
+function getImg(code, ci){
+  if(PRODUCT_IMAGES[code]) return {url:PRODUCT_IMAGES[code], real:true};
+  return {url:CAT_IMAGES[ci] || '', real:false};
+}
+
+/* ===== i18n 文案 ===== */
+var I18N = {
+  zh:{
+    heroKicker:'汽车配件 · 出口摩洛哥',
+    heroTitle:'产品目录',
+    heroSub:'面向摩洛哥及北非市场的汽车配件电子目录，覆盖发动机、传动、照明、车身、制动、悬挂转向、冷却、电气点火八大系统，中英法三语对照。',
+    statCat:'系统分类',statItem:'产品条目',statLang:'中英法语',
+    all:'全部',items:'件产品',
+    noResult:'未找到匹配的产品',noResultHint:'请尝试其他关键词，或切换分类查看全部产品。',
+    searchPh:'搜索产品名称 / 编号 / OE号 / 车型…',
+    code:'自编号',oe:'OE号',models:'适用车型',unit:'单位',seq:'序号',
+    seeMore:'查看详情',mPrev:'上一件',mNext:'下一件',
+    footerTag:'汽车配件产品目录 | Catalogue des Pièces Automobiles | Auto Parts Catalog',
+    fLangZh:'中文 · 简体',fLangEn:'English',fLangFr:'Français',fMarket:'面向摩洛哥 · 北非市场',
+    footerNote:'产品信息与适用车型以最新报价为准；如需获取完整价目表或下单，请联系供应商确认。'
+  },
+  en:{
+    heroKicker:'Auto Parts · Exported to Morocco',
+    heroTitle:'Product Catalogue',
+    heroSub:'Electronic catalogue of auto parts for Morocco and North Africa: engine, transmission, lighting, body, brake, suspension & steering, cooling, electrical & ignition — in Chinese, English and French.',
+    statCat:'Systems',statItem:'Products',statLang:'3 Languages',
+    all:'All',items:'products',
+    noResult:'No matching product found',noResultHint:'Try other keywords, or switch category to view all products.',
+    searchPh:'Search name / code / OE no. / vehicle model…',
+    code:'Code',oe:'OE No.',models:'Vehicle Models',unit:'Unit',seq:'No.',
+    seeMore:'Details',mPrev:'Previous',mNext:'Next',
+    footerTag:'Auto Parts Catalog | Catalogue des Pièces Automobiles | 汽车配件产品目录',
+    fLangZh:'Chinese',fLangEn:'English',fLangFr:'Français',fMarket:'Morocco · North Africa',
+    footerNote:'Product information and applicable models are subject to the latest quotation; contact the supplier for the full price list or to place an order.'
+  },
+  fr:{
+    heroKicker:'Pièces Auto · Exportées au Maroc',
+    heroTitle:'Catalogue Produits',
+    heroSub:'Catalogue électronique de pièces automobiles pour le Maroc et l\u2019Afrique du Nord : moteur, transmission, éclairage, carrosserie, freinage, suspension & direction, refroidissement, électrique & allumage — en chinois, anglais et français.',
+    statCat:'Systèmes',statItem:'Produits',statLang:'3 Langues',
+    all:'Tous',items:'produits',
+    noResult:'Aucun produit trouvé',noResultHint:'Essayez d\u2019autres mots-clés, ou changez de catégorie pour voir tous les produits.',
+    searchPh:'Rechercher nom / code / réf. OE / modèle…',
+    code:'Code',oe:'R\u00e9f. OE',models:'Modèles',unit:'Unité',seq:'No.',
+    seeMore:'Détails',mPrev:'Précédent',mNext:'Suivant',
+    footerTag:'Catalogue des Pièces Automobiles | Auto Parts Catalog | 汽车配件产品目录',
+    fLangZh:'Chinois',fLangEn:'Anglais',fLangFr:'Français',fMarket:'Maroc · Afrique du Nord',
+    footerNote:'Les informations et modèles applicables sont soumis à la dernière cotation ; contactez le fournisseur pour la liste de prix complète ou pour passer commande.'
+  }
+};
+/* ===== 车型名称翻译 ===== */
+var MODEL_TRANS = [
+    ["东风小康康威","DFSK Kangwei","DFSK Kangwei"],
+    ["东风小康专用","DFSK Specific","DFSK spécifique"],
+    ["奇瑞新QQ","Chery New QQ","Chery New QQ"],
+    ["东风风光","DFSK Glory","DFSK Glory"],
+    ["长安之星","Changan Star","Changan Star"],
+    ["哈飞中意","Hafei Zhongyi","Hafei Zhongyi"],
+    ["哈飞民意","Hafei Minyi","Hafei Minyi"],
+    ["大宇达马斯","Daewoo Damas","Daewoo Damas"],
+    ["大宇马蹄子","Daewoo Matiz","Daewoo Matiz"],
+    ["雪佛兰斯帕克","Chevrolet Spark","Chevrolet Spark"],
+    ["雪佛兰乐驰","Chevrolet Spark","Chevrolet Spark"],
+    ["奇瑞风云","Chery Fulwin","Chery Fulwin"],
+    ["奇瑞QQ","Chery QQ","Chery QQ"],
+    ["开瑞优劲","Karry Youjin","Karry Youjin"],
+    ["开瑞优优","Karry Youyou","Karry Youyou"],
+    ["金杯鑫源","Jinbei Shineray","Jinbei Shineray"],
+    ["长城风骏","Great Wall Wingle","Great Wall Wingle"],
+    ["吉奥星旺","Gonow Xingwang","Gonow Xingwang"],
+    ["力帆丰顺","Lifan Fengshun","Lifan Fengshun"],
+    ["新之星","New Star","Nouveau Star"],
+    ["小海狮","Small Sea Lion","Small Sea Lion"],
+    ["新海狮","New Sea Lion","New Sea Lion"],
+    ["东风小康","DFSK","DFSK"],
+    ["双排加长","Ext. Double Cab","Double cab. all."],
+    ["德尔福","Delphi","Delphi"],
+    ["长安","Changan","Changan"],
+    ["东风","Dongfeng","Dongfeng"],
+    ["小康","DFSK","DFSK"],
+    ["之星","Star","Star"],
+    ["哈飞","Hafei","Hafei"],
+    ["中意","Zhongyi","Zhongyi"],
+    ["民意","Minyi","Minyi"],
+    ["路宝","Lubao","Lubao"],
+    ["昌河","Changhe","Changhe"],
+    ["昌铃王","Changlingwang","Changlingwang"],
+    ["佳宝","Jiabao","Jiabao"],
+    ["五菱","Wuling","Wuling"],
+    ["荣光","Rongguang","Rongguang"],
+    ["大宇","Daewoo","Daewoo"],
+    ["达马斯","Damas","Damas"],
+    ["马蹄子","Matiz","Matiz"],
+    ["铃木","Suzuki","Suzuki"],
+    ["奥拓","Alto","Alto"],
+    ["雪佛兰","Chevrolet","Chevrolet"],
+    ["斯帕克","Spark","Spark"],
+    ["乐驰","Spark","Spark"],
+    ["奇瑞","Chery","Chery"],
+    ["风云","Fulwin","Fulwin"],
+    ["开瑞","Karry","Karry"],
+    ["优劲","Youjin","Youjin"],
+    ["优优","Youyou","Youyou"],
+    ["金杯","Jinbei","Jinbei"],
+    ["鑫源","Shineray","Shineray"],
+    ["长城","Great Wall","Great Wall"],
+    ["风骏","Wingle","Wingle"],
+    ["北汽","BAIC","BAIC"],
+    ["福汽","Fuqi","Fuqi"],
+    ["福田","Foton","Foton"],
+    ["吉奥","Gonow","Gonow"],
+    ["星旺","Xingwang","Xingwang"],
+    ["松花江","Songhuajiang","Songhuajiang"],
+    ["力帆","Lifan","Lifan"],
+    ["丰顺","Fengshun","Fengshun"],
+    ["富康","Fukang","Fukang"],
+    ["江陵","Jiangling","Jiangling"],
+    ["一汽","FAW","FAW"],
+    ["小霸王","Xiaobawang","Xiaobawang"],
+    ["康威","Kangwei","Kangwei"],
+    ["风光","Glory","Glory"],
+    ["福瑞达","Freda","Freda"],
+    ["碟刹","Disc Brake","Frein à disque"],
+    ["单排","Single Cab","Cabine simple"],
+    ["面包","Van","Fourgon"],
+    ["油车","Petrol","Essence"],
+    ["专用","Specific","spécifique"],
+    ["方孔","Square Hole","Trou carré"],
+    ["二代","2nd Gen","2e gén."],
+    ["2代","2nd Gen","2e gén."],
+    ["化","Carb.","Carb."],
+    ["新","New","Nouveau"]
+];
+function translateModels(text, lang){
+  if(!text || lang==='zh') return text;
+  var result = text;
+  for(var i=0;i<MODEL_TRANS.length;i++){
+    var term = MODEL_TRANS[i][0];
+    if(result.indexOf(term)!==-1){
+      result = result.split(term).join(' '+MODEL_TRANS[i][lang==='en'?1:2]+' ');
+    }
+  }
+  result = result.replace(/\s+/g,' ').replace(/\s*\/\s*/g,'/').trim();
+  return result;
+}
+
+/* ===== 状态 ===== */
+var state = {
+  lang: 'zh',
+  cat: -1,          // -1 = 全部
+  query: '',
+  list: [],          // 当前过滤后的产品（扁平索引）
+  current: null      // 详情弹层当前索引（在 list 中）
+};
+
+/* ===== 工具 ===== */
+function $(s){return document.querySelector(s)}
+function $$(s){return Array.prototype.slice.call(document.querySelectorAll(s))}
+function splitModels(m){return String(m||'').split(/[/\n]/).map(function(s){return s.trim()}).filter(Boolean)}
+function norm(s){return String(s||'').toLowerCase()}
+function catName(cat){return cat[state.lang]}
+
+/* ===== 渲染：分类标签 ===== */
+function renderTabs(){
+  var tabs = $('#catTabs');
+  var html = '<button class="cat-tab'+(state.cat===-1?' active':'')+'" data-cat="-1" role="tab">'
+    + '<span data-i18n="all">'+I18N[state.lang].all+'</span>'
+    + '<span class="cnt">90</span></button>';
+  CATALOG_DATA.forEach(function(c, i){
+    html += '<button class="cat-tab'+(state.cat===i?' active':'')+'" data-cat="'+i+'" role="tab">'
+      + '<span>'+catName(c)+'</span><span class="cnt">'+c.items.length+'</span></button>';
+  });
+  tabs.innerHTML = html;
+  $$('.cat-tab').forEach(function(b){
+    b.addEventListener('click', function(){
+      state.cat = parseInt(b.getAttribute('data-cat'), 10);
+      renderTabs(); renderGrid();
+      window.scrollTo({top: document.getElementById('catalog').offsetTop - 140, behavior:'smooth'});
+    });
+  });
+}
+
+/* ===== 渲染：产品网格 ===== */
+function currentList(){
+  var q = norm(state.query);
+  var out = [];
+  CATALOG_DATA.forEach(function(c, ci){
+    if(state.cat !== -1 && state.cat !== ci) return;
+    c.items.forEach(function(it){
+      if(q){
+        var hay = norm([it.code, it.oe, it.zh, it.en, it.fr, it.models].join(' '));
+        if(hay.indexOf(q) === -1) return;
+      }
+      out.push({ci:ci, it:it});
+    });
+  });
+  return out;
+}
+
+function renderGrid(){
+  state.list = currentList();
+  var grid = $('#grid'), empty = $('#empty');
+  var secTitle = $('#secTitle'), secCount = $('#secCount'), resultLine = $('#resultLine');
+  var curCat = state.cat===-1 ? null : CATALOG_DATA[state.cat];
+  secTitle.textContent = curCat ? catName(curCat) : I18N[state.lang].all;
+  var total = curCat ? curCat.items.length : 90;
+  secCount.textContent = total + ' ' + I18N[state.lang].items;
+  if(state.query){
+    resultLine.textContent = state.list.length + ' / ' + total + ' ' + I18N[state.lang].items;
+  } else {
+    resultLine.textContent = '';
+  }
+
+  if(!state.list.length){
+    grid.innerHTML = '';
+    empty.classList.add('show');
+    return;
+  }
+  empty.classList.remove('show');
+
+  var html = '';
+  state.list.forEach(function(entry, idx){
+    var c = CATALOG_DATA[entry.ci], it = entry.it;
+    var models = splitModels(translateModels(it.models, state.lang));
+    var modelHtml = models.slice(0,4).map(function(m){return '<span class="seg">'+esc(m)+'</span>'}).join('');
+    var more = models.length>4 ? '<span style="font-size:11px;color:var(--muted-2)">+'+(models.length-4)+'</span>' : '';
+    var primary = it[state.lang] || it.zh;
+    var secondary = state.lang==='en' ? (it.zh) : (it.en || it.zh);
+    var imgInfo = getImg(it.code, entry.ci);
+    var imgTag = imgInfo.real ? '' : '<span class="img-tag">'+(state.lang==='zh'?'分类图':state.lang==='fr'?'Illustration':'Category')+'</span>';
+    html += '<article class="card" tabindex="0" data-idx="'+idx+'" role="button">'    + '<div class="card-img"><img src="'+esc(imgInfo.url)+'" alt="'+esc(primary)+'" loading="lazy">'+imgTag+'</div>'
+      + '<div class="card-top">'
+      +   '<span class="chip cat-chip">'+esc(catName(c))+'</span>'
+      +   '<span class="chip unit-chip">'+esc(it.unit||'—')+'</span>'
+      + '</div>'
+      + '<div><h3 class="card-name">'+esc(primary)+'</h3>'
+      + '<p class="card-name-en">'+esc(secondary)+'</p></div>'
+      + '<div class="code-plate"><span class="cl">'+I18N[state.lang].code+'</span><span class="cv">'+esc(it.code)+'</span></div>'
+      + '<div class="card-meta">'
+      +   (it.oe ? '<div class="meta-row"><span class="ml">'+I18N[state.lang].oe+'</span><span class="mv">'+esc(it.oe)+'</span></div>' : '')
+      +   (modelHtml ? '<div class="meta-row"><span class="ml">'+I18N[state.lang].models+'</span><span class="mv">'+modelHtml+more+'</span></div>' : '')
+      + '</div>'
+      + '<div class="card-see" style="font-size:12px;color:var(--amber-deep);font-weight:600;letter-spacing:.3px">'+I18N[state.lang].seeMore+'</div>'
+      + '</article>';
+  });
+  grid.innerHTML = html;
+
+  $$('.card').forEach(function(card){
+    function open(){ openModal(parseInt(card.getAttribute('data-idx'),10)) }
+    card.addEventListener('click', open);
+    card.addEventListener('keydown', function(e){
+      if(e.key==='Enter' || e.key===' '){e.preventDefault(); open();}
+    });
+  });
+}
+
+function esc(s){return String(s==null?'':s).replace(/[&<>"']/g, function(m){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[m]})}
+
+/* ===== 详情弹层 ===== */
+function openModal(idx){
+  if(idx<0 || idx>=state.list.length) return;
+  state.current = idx;
+  var e = state.list[idx], c = CATALOG_DATA[e.ci], it = e.it;
+  var mImg = getImg(it.code, e.ci);
+  var mImgEl = $('#mImg');
+  if(mImg.url){ mImgEl.src = mImg.url; mImgEl.alt = it[state.lang]||it.zh; mImgEl.style.display='block'; }
+  else { mImgEl.style.display='none'; }
+  $('#mCat').textContent = catName(c);
+  $('#mName').textContent = it[state.lang] || it.zh;
+  $('#mCode').textContent = it.code;
+  $('#mZh').textContent = it.zh || '—';
+  $('#mEn').textContent = it.en || '—';
+  $('#mFr').textContent = it.fr || '—';
+  $('#mUnit').textContent = it.unit || '—';
+  $('#mSeq').textContent = it.seq || '—';
+  var models = splitModels(translateModels(it.models, state.lang));
+  $('#mModels').innerHTML = models.length ? models.map(function(m){return '<span class="seg">'+esc(m)+'</span>'}).join('') : '—';
+  $('#mPrev').disabled = idx===0;
+  $('#mNext').disabled = idx===state.list.length-1;
+  $('#modalMask').classList.add('show');
+  document.body.style.overflow = 'hidden';
+}
+function closeModal(){
+  $('#modalMask').classList.remove('show');
+  document.body.style.overflow = '';
+}
+$('#modalClose').addEventListener('click', closeModal);
+$('#modalMask').addEventListener('click', function(e){ if(e.target===this) closeModal(); });
+$('#mPrev').addEventListener('click', function(){ if(state.current>0) openModal(state.current-1) });
+$('#mNext').addEventListener('click', function(){ if(state.current<state.list.length-1) openModal(state.current+1) });
+document.addEventListener('keydown', function(e){
+  if(!$('#modalMask').classList.contains('show')) return;
+  if(e.key==='Escape') closeModal();
+  if(e.key==='ArrowLeft') $('#mPrev').disabled||openModal(state.current-1);
+  if(e.key==='ArrowRight') $('#mNext').disabled||openModal(state.current+1);
+});
+
+/* ===== 语言切换 ===== */
+function applyLang(lang){
+  state.lang = lang;
+  try{ localStorage.setItem('lm_lang', lang) }catch(e){}
+  $$('.lang-btn').forEach(function(b){
+    var on = b.getAttribute('data-lang')===lang;
+    b.classList.toggle('active', on);
+    b.setAttribute('aria-pressed', on?'true':'false');
+  });
+  // 静态文案
+  Object.keys(I18N[lang]).forEach(function(k){
+    if(k==='searchPh') return;
+    $$('[data-i18n="'+k+'"]').forEach(function(el){ el.textContent = I18N[lang][k] });
+  });
+  $('#search').placeholder = I18N[lang].searchPh;
+  document.documentElement.lang = lang==='zh'?'zh-CN':lang;
+  renderTabs(); renderGrid();
+}
+$$('.lang-btn').forEach(function(b){
+  b.addEventListener('click', function(){ applyLang(b.getAttribute('data-lang')) });
+});
+
+/* ===== 搜索 ===== */
+var searchInput = $('#search');
+searchInput.addEventListener('input', function(){
+  state.query = searchInput.value.trim();
+  $('#searchClear').classList.toggle('show', !!state.query);
+  renderGrid();
+});
+$('#searchClear').addEventListener('click', function(){
+  searchInput.value=''; state.query=''; $('#searchClear').classList.remove('show'); renderGrid();
+  searchInput.focus();
+});
+
+/* ===== 返回顶部 ===== */
+var toTop = $('#toTop');
+window.addEventListener('scroll', function(){
+  toTop.classList.toggle('show', window.scrollY > 600);
+}, {passive:true});
+toTop.addEventListener('click', function(){ window.scrollTo({top:0, behavior:'smooth'}) });
+
+/* ===== 初始化 ===== */
+function init(){
+  var saved = null;
+  try{ saved = localStorage.getItem('lm_lang') }catch(e){}
+  var detected = (navigator.language||'').toLowerCase().indexOf('fr')===0 ? 'fr' : 'zh';
+  applyLang(saved && ['zh','en','fr'].indexOf(saved)>-1 ? saved : detected);
+}
+function loadData(){
+  var loading = document.getElementById('loadingTip');
+  if(loading) loading.style.display='flex';
+  fetch('catalog.json',{cache:'no-store'})
+    .then(function(r){ if(!r.ok) throw new Error('HTTP '+r.status); return r.json(); })
+    .then(function(data){
+      CATALOG_DATA = data;
+      if(loading) loading.style.display='none';
+      init();
+    })
+    .catch(function(err){
+      console.error('Failed to load catalog.json:', err);
+      if(loading){
+        loading.innerHTML = '<div style="text-align:center"><p style="color:#c0392b;font-size:16px;margin-bottom:8px">数据加载失败</p><p style="color:#666;font-size:13px">请确保 catalog.json 与 index.html 在同一目录，并通过 Web 服务器访问（部署到 Netlify 后正常）。</p></div>';
+      }
+    });
+}
+loadData();
+</script>
+</body>
+</html>
