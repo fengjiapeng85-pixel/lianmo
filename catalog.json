@@ -224,6 +224,16 @@
         "fr": "Commande de vitesses",
         "models": "东风小康V07S/K07S/东风小康K05S/1.0L",
         "unit": "PCS"
+      },
+      {
+        "zh": "变速箱22",
+        "en": "",
+        "fr": "",
+        "code": "222",
+        "oe": "",
+        "unit": "PCS",
+        "models": "",
+        "image": ""
       }
     ]
   },
