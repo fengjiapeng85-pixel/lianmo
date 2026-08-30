@@ -376,7 +376,7 @@ a[class*="netlify"],a[href*="netlify.com"],div[class*="netlify"],iframe[src*="ne
 .ptr-indicator.ready .ptr-arrow{transform:rotate(180deg)}
 .ptr-indicator.ready .ptr-inner{color:var(--amber)}
 .ptr-indicator.ready .ptr-arrow svg{stroke:var(--amber)}
-.ptr-indicator.loading .ptr-arrow svg{animation:ptr-spin .8s linear infinite}
+.ptr-indicator.refreshing .ptr-arrow svg{animation:ptr-spin .8s linear infinite}
 @keyframes ptr-spin{from{transform:rotate(0)}to{transform:rotate(360deg)}}
 </style>
 </head>
@@ -871,28 +871,24 @@ document.addEventListener('keydown', function(e){
   var ptrText = document.getElementById('ptrText');
   if(!indicator || !ptrText) return;
 
-  var startY = 0, currentY = 0, pulling = false, ready = false, loading = false;
+  var startY = 0, pulling = false, ready = false, refreshing = false;
   var THRESHOLD = 70;
   var MAX_PULL = 120;
 
-  function setHeight(px){
-    indicator.style.height = px + 'px';
+  function t(key){
+    try{ return (typeof I18N !== 'undefined' && window.state && I18N[window.state.lang]) ? I18N[window.state.lang][key] : key; }
+    catch(e){ return key; }
   }
-  function setState(state){
-    indicator.classList.remove('ready','loading');
-    if(state === 'ready'){
-      indicator.classList.add('ready');
-      ptrText.textContent = (typeof I18N !== 'undefined' && state) ? I18N[state.lang].ptrRelease : '释放刷新';
-    } else if(state === 'loading'){
-      indicator.classList.add('loading');
-      ptrText.textContent = (typeof I18N !== 'undefined' && state) ? I18N[state.lang].ptrLoading : '刷新中…';
-    } else {
-      ptrText.textContent = (typeof I18N !== 'undefined' && state) ? I18N[state.lang].ptrPull : '下拉刷新';
-    }
+  function setHeight(px){ indicator.style.height = px + 'px'; }
+  function setPhase(phase){
+    indicator.classList.remove('ready','refreshing');
+    if(phase === 'ready'){ indicator.classList.add('ready'); ptrText.textContent = t('ptrRelease'); }
+    else if(phase === 'refreshing'){ indicator.classList.add('refreshing'); ptrText.textContent = t('ptrLoading'); }
+    else { ptrText.textContent = t('ptrPull'); }
   }
 
   document.addEventListener('touchstart', function(e){
-    if(loading) return;
+    if(refreshing) return;
     if(window.scrollY > 5) return;
     startY = e.touches[0].clientY;
     pulling = true;
@@ -900,38 +896,32 @@ document.addEventListener('keydown', function(e){
   }, {passive:true});
 
   document.addEventListener('touchmove', function(e){
-    if(!pulling || loading) return;
-    currentY = e.touches[0].clientY;
-    var diff = currentY - startY;
-    if(diff <= 0){
-      setHeight(0);
-      setState('idle');
-      return;
-    }
-    // 阻尼效果：越拉越费劲
+    if(!pulling || refreshing) return;
+    var diff = e.touches[0].clientY - startY;
+    if(diff <= 0){ setHeight(0); setPhase('idle'); return; }
     var resisted = Math.min(MAX_PULL, diff * 0.45);
     setHeight(resisted);
     if(resisted >= THRESHOLD){
-      if(!ready){ ready = true; setState('ready'); }
+      if(!ready){ ready = true; setPhase('ready'); }
     } else {
-      if(ready){ ready = false; setState('idle'); }
+      if(ready){ ready = false; setPhase('idle'); }
     }
   }, {passive:true});
 
   document.addEventListener('touchend', function(){
-    if(!pulling || loading) return;
+    if(!pulling || refreshing) return;
     pulling = false;
     if(ready){
-      loading = true;
-      setState('loading');
+      refreshing = true;
+      setPhase('refreshing');
       setHeight(50);
-      // 短暂延迟后刷新，让用户看到"刷新中"状态
-      setTimeout(function(){
-        location.reload();
-      }, 400);
+      // 立即刷新，不延迟，避免卡住
+      setTimeout(function(){ location.reload(); }, 200);
+      // 安全兜底：3秒后如果还没刷新，重置状态
+      setTimeout(function(){ refreshing = false; setHeight(0); setPhase('idle'); }, 3000);
     } else {
       setHeight(0);
-      setState('idle');
+      setPhase('idle');
     }
   });
 })();
