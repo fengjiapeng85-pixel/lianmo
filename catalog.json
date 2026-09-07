@@ -14,7 +14,8 @@
         "en": "ENGINE",
         "fr": "Moteur nu",
         "models": "465化/F10A/哈飞中意",
-        "unit": "PCS"
+        "unit": "PCS",
+        "img": "images/products/LBENG-1093-A3.jpeg"
       },
       {
         "seq": "2",
@@ -34,7 +35,8 @@
         "en": "ENGINE",
         "fr": "Moteur nu",
         "models": "465EA",
-        "unit": "PCS"
+        "unit": "PCS",
+        "img": "images/products/LB001-ENG-1005-A1.png"
       },
       {
         "seq": "4",
@@ -44,7 +46,8 @@
         "en": "ENGINE",
         "fr": "Moteur nu",
         "models": "大宇达马斯/F8C",
-        "unit": "PCS"
+        "unit": "PCS",
+        "img": "images/products/LB001-ENG-1049-1.jpeg"
       },
       {
         "seq": "5",
@@ -54,7 +57,8 @@
         "en": "ENGINE",
         "fr": "Moteur nu",
         "models": "465QA/小霸王",
-        "unit": "PCS"
+        "unit": "PCS",
+        "img": "images/products/LB001-ENG-1009-A1.jpeg"
       },
       {
         "seq": "6",
@@ -64,7 +68,8 @@
         "en": "ENGINE",
         "fr": "Moteur nu",
         "models": "474",
-        "unit": "PCS"
+        "unit": "PCS",
+        "img": "images/products/LB001-ENG-1012-2.png"
       },
       {
         "seq": "7",
@@ -74,7 +79,8 @@
         "en": "ENGINE",
         "fr": "Moteur nu",
         "models": "368Q/奥拓/化",
-        "unit": "PCS"
+        "unit": "PCS",
+        "img": "images/products/LB001-ENG-1011-A1.jpeg"
       },
       {
         "seq": "8",
@@ -84,7 +90,8 @@
         "en": "ENGINE",
         "fr": "Moteur nu",
         "models": "QQ372",
-        "unit": "PCS"
+        "unit": "PCS",
+        "img": "images/products/LB001-ENG-1020-A2.jpeg"
       },
       {
         "seq": "9",
@@ -94,7 +101,8 @@
         "en": "FLYWHEEL ASSEMBLY",
         "fr": "Volant moteur",
         "models": "之星465Q5/小康465QEA/吉奥465QR/",
-        "unit": "PCS"
+        "unit": "PCS",
+        "img": "images/products/LB008-DFM1-2006.jpeg"
       },
       {
         "seq": "10",
@@ -104,7 +112,8 @@
         "en": "MAIN BEARING",
         "fr": "Coussinets de vilebrequin",
         "models": "大宇达马斯/F8C",
-        "unit": "SET"
+        "unit": "SET",
+        "img": "images/products/LBDY1-1073-0_50.jpeg"
       },
       {
         "seq": "11",
@@ -114,7 +123,8 @@
         "en": "CONNECTING ROD BEARING",
         "fr": "Coussinets de bielle",
         "models": "大宇达马斯/F8C",
-        "unit": "SET"
+        "unit": "SET",
+        "img": "images/products/LBDY1-1074-0_50.jpeg"
       },
       {
         "seq": "12",
@@ -124,7 +134,8 @@
         "en": "CYLINDER HEAD",
         "fr": "Culasse",
         "models": "465",
-        "unit": "PCS"
+        "unit": "PCS",
+        "img": "images/products/LB004-DFM1-1005.png"
       },
       {
         "seq": "13",
@@ -134,7 +145,8 @@
         "en": "CYLINDER HEAD",
         "fr": "Culasse",
         "models": "F8C",
-        "unit": "PCS"
+        "unit": "PCS",
+        "img": "images/products/LB050-DY1-1017.png"
       },
       {
         "seq": "14",
@@ -144,7 +156,8 @@
         "en": "CYLINDER HEAD",
         "fr": "Culasse",
         "models": "474",
-        "unit": "PCS"
+        "unit": "PCS",
+        "img": "images/products/LB007-DFM1-1116.png"
       },
       {
         "seq": "15",
@@ -183,7 +196,8 @@
         "en": "AXLE SHAFT",
         "fr": "Arbre de transmission",
         "models": "长安之星1020/东风小康/1022/哈飞民意",
-        "unit": "PCS"
+        "unit": "PCS",
+        "img": "images/products/LB012-DFM1-2107-A.jpeg"
       },
       {
         "seq": "2",
@@ -193,7 +207,8 @@
         "en": "HALF SHAFT FASTENING SLEEVE",
         "fr": "Manchon de fixation d'arbre",
         "models": "长安之星/东风小康/C31/ABS",
-        "unit": "PCS"
+        "unit": "PCS",
+        "img": "images/products/LBDFM1-2197.jpeg"
       },
       {
         "seq": "3",
@@ -203,7 +218,8 @@
         "en": "TRANSMISSION ASSEMBLY",
         "fr": "Boîte de vitesses",
         "models": "小康/长安465/江陵465、方孔",
-        "unit": "PCS"
+        "unit": "PCS",
+        "img": "images/products/LB003-ENG-1061-A.jpeg"
       },
       {
         "seq": "4",
@@ -213,7 +229,8 @@
         "en": "DIFFERENTIAL ASSEMBLY",
         "fr": "Différentiel",
         "models": "小康K07",
-        "unit": "PCS"
+        "unit": "PCS",
+        "img": "images/products/LB010-DFM1-2040-A.jpeg"
       },
       {
         "seq": "5",
@@ -223,7 +240,8 @@
         "en": "SHIFT ASSEMBLY",
         "fr": "Commande de vitesses",
         "models": "东风小康V07S/K07S/东风小康K05S/1.0L",
-        "unit": "PCS"
+        "unit": "PCS",
+        "img": "images/products/LBDFM1-1206.jpeg"
       }
     ]
   },
@@ -242,7 +260,8 @@
         "en": "TAIL LAMP",
         "fr": "Feu arrière",
         "models": "东风小康K01单排/东风小康K02L双排加长",
-        "unit": "PCS"
+        "unit": "PCS",
+        "img": "images/products/LB014-DFM1-3021.jpeg"
       },
       {
         "seq": "2",
@@ -272,7 +291,8 @@
         "en": "FRONT FOG LAMP LEFT",
         "fr": "Phare antibrouillard avant (Gauche)",
         "models": "小康K01H",
-        "unit": "PCS"
+        "unit": "PCS",
+        "img": "images/products/LB018-DFM2-3001-L.jpeg"
       },
       {
         "seq": "5",
@@ -282,7 +302,8 @@
         "en": "FRONT FOG LAMP RIGHT",
         "fr": "Phare antibrouillard avant (Droit)",
         "models": "小康K01H",
-        "unit": "PCS"
+        "unit": "PCS",
+        "img": "images/products/LB018-DFM2-3001-L.jpeg"
       },
       {
         "seq": "6",
@@ -312,7 +333,8 @@
         "en": "HEAD LAMP ,L",
         "fr": "Phare avant (Gauche)",
         "models": "东风小康K01H",
-        "unit": "PCS"
+        "unit": "PCS",
+        "img": "images/products/LB017-DFM2-3001-L.png"
       },
       {
         "seq": "9",
@@ -322,7 +344,8 @@
         "en": "HEAD LAMP ,R",
         "fr": "Phare avant (Droit)",
         "models": "东风小康K01H",
-        "unit": "PCS"
+        "unit": "PCS",
+        "img": "images/products/LB017-DFM2-3001-L.png"
       },
       {
         "seq": "10",
@@ -421,7 +444,8 @@
         "en": "BACK DOOR LOCK",
         "fr": "Serrure de porte arrière",
         "models": "昌河1018/中意/大宇达马斯",
-        "unit": "PCS"
+        "unit": "PCS",
+        "img": "images/products/LB061-LM3-4001.jpeg"
       },
       {
         "seq": "2",
@@ -431,7 +455,8 @@
         "en": "REAR VIEW MIRROR LEFT",
         "fr": "Rétroviseur (Gauche)",
         "models": "大宇达马斯/新松花江/ 铃木CARRY ST-100",
-        "unit": "PCS"
+        "unit": "PCS",
+        "img": "images/products/LB061-LM3-4004-1-L.jpeg"
       },
       {
         "seq": "3",
@@ -441,7 +466,8 @@
         "en": "REAR VIEW MIRROR RIGHT",
         "fr": "Rétroviseur (Droit)",
         "models": "大宇达马斯/新松花江/ 铃木CARRY ST-100",
-        "unit": "PCS"
+        "unit": "PCS",
+        "img": "images/products/LB061-LM3-4004-1-R.jpeg"
       },
       {
         "seq": "4",
@@ -451,7 +477,8 @@
         "en": "REAR VIEW MIRROR LEFT",
         "fr": "Rétroviseur (Gauche)",
         "models": "东风小康康威/小康K01H/K01S/K05S/K07S",
-        "unit": "PCS"
+        "unit": "PCS",
+        "img": "images/products/LB016-DFM1-4027-1L.jpeg"
       },
       {
         "seq": "5",
@@ -461,7 +488,8 @@
         "en": "REAR VIEW MIRROR RIGHT",
         "fr": "Rétroviseur (Droit)",
         "models": "东风小康康威/小康K01H/K01S/K05S/K07S",
-        "unit": "PCS"
+        "unit": "PCS",
+        "img": "images/products/LB016-DFM1-4027-1R.png"
       },
       {
         "seq": "6",
@@ -471,7 +499,8 @@
         "en": "REAR BUMPER",
         "fr": "Pare-chocs arrière",
         "models": "昌河410/大宇达马斯",
-        "unit": "PCS"
+        "unit": "PCS",
+        "img": "images/products/LBLM3-4013.jpeg"
       },
       {
         "seq": "7",
@@ -481,7 +510,8 @@
         "en": "HOOD",
         "fr": "Capot moteur",
         "models": "小康K01H",
-        "unit": "PCS"
+        "unit": "PCS",
+        "img": "images/products/LB018-DFM2-4003.png"
       },
       {
         "seq": "8",
@@ -491,7 +521,8 @@
         "en": "BUMPER GRILLE",
         "fr": "Grille de pare-chocs",
         "models": "东风小康K07",
-        "unit": "SET"
+        "unit": "SET",
+        "img": "images/products/LB015-DFM1-4017-SET.png"
       },
       {
         "seq": "9",
@@ -501,7 +532,8 @@
         "en": "GUARD BUCKLE",
         "fr": "Boucle de garde-corps",
         "models": "东风小康K01/K02/V21/V22",
-        "unit": "PCS"
+        "unit": "PCS",
+        "img": "images/products/LB015-DFM1-4002.jpeg"
       },
       {
         "seq": "10",
@@ -511,7 +543,8 @@
         "en": "FRONT BUMPER",
         "fr": "Pare-chocs avant",
         "models": "小康K07S/K05S/K01S",
-        "unit": "PCS"
+        "unit": "PCS",
+        "img": "images/products/LBDFM1-4151.jpeg"
       },
       {
         "seq": "11",
@@ -531,7 +564,8 @@
         "en": "FRONT DOOR INNER HANDLE RIGHT",
         "fr": "Poignée intérieure porte avant (Droit)",
         "models": "之星/小康",
-        "unit": "PCS"
+        "unit": "PCS",
+        "img": "images/products/LB016-DFM1-4037-SET.jpeg"
       },
       {
         "seq": "13",
@@ -541,7 +575,8 @@
         "en": "FRONT DOOR LIFTER LEFT",
         "fr": "Lève-vitre porte avant (Gauche)",
         "models": "昌河1018/佳宝6350/大宇达马斯",
-        "unit": "PCS"
+        "unit": "PCS",
+        "img": "images/products/LBLM3-3001-L.jpeg"
       },
       {
         "seq": "14",
@@ -551,7 +586,8 @@
         "en": "FRONT DOOR LIFTER RIGHT",
         "fr": "Lève-vitre porte avant (Droit)",
         "models": "昌河1018/佳宝6350/大宇达马斯",
-        "unit": "PCS"
+        "unit": "PCS",
+        "img": "images/products/LBLM3-3001-R.jpeg"
       },
       {
         "seq": "15",
@@ -610,7 +646,8 @@
         "en": "ABS RING GEAR",
         "fr": "Bague dentée ABS",
         "models": "东风风光330/小康K01H/小康K07S",
-        "unit": "PCS"
+        "unit": "PCS",
+        "img": "images/products/LBDFM2-2003.jpeg"
       },
       {
         "seq": "2",
@@ -620,7 +657,8 @@
         "en": "BRAKE CYLINDER LEFT",
         "fr": "Cylindre de frein arrière",
         "models": "之星SC6350/东风小康",
-        "unit": "PCS"
+        "unit": "PCS",
+        "img": "images/products/LB013-DFM1-2135-BL.jpeg"
       },
       {
         "seq": "3",
@@ -630,7 +668,8 @@
         "en": "BRAKE CYLINDER LEFT",
         "fr": "Cylindre de frein arrière",
         "models": "之星SC6350/东风小康",
-        "unit": "PCS"
+        "unit": "PCS",
+        "img": "images/products/LB013-DFM1-2135-BL.jpeg"
       }
     ]
   },
@@ -649,7 +688,8 @@
         "en": "STEERING",
         "fr": "Direction assistée",
         "models": "之星SC6350/东风小康K07",
-        "unit": "PCS"
+        "unit": "PCS",
+        "img": "images/products/LB013-DFM1-2155-A.png"
       },
       {
         "seq": "2",
@@ -669,7 +709,8 @@
         "en": "STEERING GEAR LOWER SHAFT",
         "fr": "Arbre inférieur de direction",
         "models": "东风小康专用",
-        "unit": "PCS"
+        "unit": "PCS",
+        "img": "images/products/LB012-DFM1-2112-A.jpeg"
       },
       {
         "seq": "4",
@@ -679,7 +720,8 @@
         "en": "STEERING ASSEMBLY",
         "fr": "Ensemble de direction",
         "models": "小康K01/之星6350/哈飞民意",
-        "unit": "PCS"
+        "unit": "PCS",
+        "img": "images/products/LB013-DFM1-2154-A.jpeg"
       },
       {
         "seq": "5",
@@ -689,7 +731,8 @@
         "en": "REAR STEEL PLATE BUSHING",
         "fr": "Bagues de ressort à lames arrière",
         "models": "462/1018/中意/大宇达马斯",
-        "unit": "SET"
+        "unit": "SET",
+        "img": "images/products/LBHF1-2035.jpeg"
       },
       {
         "seq": "6",
@@ -699,7 +742,8 @@
         "en": "REAR STEEL PLATE BUSHING",
         "fr": "Bagues de ressort à lames arrière",
         "models": "东风小康/五菱",
-        "unit": "SET"
+        "unit": "SET",
+        "img": "images/products/LB011-DFM1-2072.jpeg"
       },
       {
         "seq": "7",
@@ -709,7 +753,8 @@
         "en": "FRONT SHOCK ABSORBER ASSEMBLY LEFT",
         "fr": "Amortisseur avant (Gauche)",
         "models": "东风小康",
-        "unit": "PCS"
+        "unit": "PCS",
+        "img": "images/products/LB010-DFM1-2054-AL.jpeg"
       },
       {
         "seq": "8",
@@ -719,7 +764,8 @@
         "en": "FRONT SHOCK ABSORBER ASSEMBLY RIGHT",
         "fr": "Amortisseur avant (Droit)",
         "models": "东风小康",
-        "unit": "PCS"
+        "unit": "PCS",
+        "img": "images/products/LB010-DFM1-2054-AR.jpeg"
       },
       {
         "seq": "9",
@@ -729,7 +775,8 @@
         "en": "FRONT WHEEL BEARING",
         "fr": "Roulement de roue avant",
         "models": "410/哈飞中意/佳宝碟刹/昌河1018/大宇达马斯",
-        "unit": "PCS"
+        "unit": "PCS",
+        "img": "images/products/LBHF1-2034.jpeg"
       },
       {
         "seq": "10",
@@ -739,7 +786,8 @@
         "en": "OUTER BALL JOINT LEFT",
         "fr": "Rotule extérieure (Gauche)",
         "models": "东风小康V27/V21/之星/小康/福瑞达/C31/新之星M201",
-        "unit": "PCS"
+        "unit": "PCS",
+        "img": "images/products/LB012-DFM1-2114-HE-SET.jpeg"
       },
       {
         "seq": "11",
@@ -759,7 +807,8 @@
         "en": "SWING ARM LEFT",
         "fr": "Bras de suspension (Gauche)",
         "models": "之星SC6350/东风小康/力帆丰顺/佳宝T57/佳宝6371/哈飞民意/k01s/K07S/K05S\n金杯鑫源小海狮X30/X30S油车/新海狮S",
-        "unit": "PCS"
+        "unit": "PCS",
+        "img": "images/products/LB010-DFM1-2058-HE-SET.jpeg"
       },
       {
         "seq": "13",
@@ -769,7 +818,8 @@
         "en": "BELT TENSIONER",
         "fr": "Tendeur de courroie",
         "models": "462/465/368/F10A/F8B/东风小康K01/K07/K17/哈飞中意/昌河1018/铃木奥拓/",
-        "unit": "PCS"
+        "unit": "PCS",
+        "img": "images/products/LB005-DFM1-1056.jpeg"
       }
     ]
   },
@@ -788,7 +838,8 @@
         "en": "HOSE RADIATOR",
         "fr": "Durite de radiateur",
         "models": "之星465/小康465",
-        "unit": "PCS"
+        "unit": "PCS",
+        "img": "images/products/LB011-DFM1-2092-2.jpeg"
       },
       {
         "seq": "2",
@@ -798,7 +849,8 @@
         "en": "WATER PIPE JOINT",
         "fr": "Raccord de tuyau deau",
         "models": "大宇达马斯",
-        "unit": "PCS"
+        "unit": "PCS",
+        "img": "images/products/LBDY1-1061.jpeg"
       },
       {
         "seq": "3",
@@ -808,7 +860,8 @@
         "en": "RADIATOR",
         "fr": "Radiateur",
         "models": "东风小康K01H",
-        "unit": "PCS"
+        "unit": "PCS",
+        "img": "images/products/LBDFM1-2231-26MM.jpeg"
       },
       {
         "seq": "4",
@@ -818,7 +871,8 @@
         "en": "RADIATOR",
         "fr": "Radiateur",
         "models": "DFSK 东风小康K07S",
-        "unit": "PCS"
+        "unit": "PCS",
+        "img": "images/products/LBDFM2-4024.jpeg"
       },
       {
         "seq": "5",
@@ -828,7 +882,8 @@
         "en": "RADIATOR",
         "fr": "Radiateur",
         "models": "小康",
-        "unit": "PCS"
+        "unit": "PCS",
+        "img": "images/products/LB011-DFM1-2082-H1.jpeg"
       },
       {
         "seq": "6",
@@ -838,7 +893,8 @@
         "en": "WATER TANK CAP",
         "fr": "Bouchon de radiateur",
         "models": "长安之星/东风小康",
-        "unit": "PCS"
+        "unit": "PCS",
+        "img": "images/products/LB011-DFM1-2091-D.jpeg"
       }
     ]
   },
@@ -857,7 +913,8 @@
         "en": "IGNITION COIL",
         "fr": "Bobine dallumage",
         "models": "长安CM5/路宝/富康1.6/奇瑞风云477/长城风骏3/长城风骏5/长城491/小康",
-        "unit": "PCS"
+        "unit": "PCS",
+        "img": "images/products/LB087-A3-0026.jpeg"
       },
       {
         "seq": "2",
@@ -867,7 +924,8 @@
         "en": "ECU",
         "fr": "Calculateur moteur",
         "models": "东风小康AF10-06",
-        "unit": "PCS"
+        "unit": "PCS",
+        "img": "images/products/LBDFM1-3087.jpeg"
       },
       {
         "seq": "3",
@@ -877,7 +935,8 @@
         "en": "ELECTRIC OIL PUMP",
         "fr": "Pompe à huile électrique",
         "models": "465/长安之星/小康/SK410/铃木CARRY",
-        "unit": "PCS"
+        "unit": "PCS",
+        "img": "images/products/LBCH3-3022.jpeg"
       },
       {
         "seq": "4",
@@ -887,7 +946,8 @@
         "en": "IGNITION CABLE",
         "fr": "Fils de bougie",
         "models": "东风小康465Q1A",
-        "unit": "SET"
+        "unit": "SET",
+        "img": "images/products/LB007-DFM1-1107-HB.jpeg"
       },
       {
         "seq": "5",
@@ -897,7 +957,8 @@
         "en": "IGNITION CABLE",
         "fr": "Fils de bougie",
         "models": "大宇马蹄子/雪佛兰斯帕克",
-        "unit": "SET"
+        "unit": "SET",
+        "img": "images/products/LBDX-FGX-3210-B.jpeg"
       },
       {
         "seq": "6",
@@ -907,7 +968,8 @@
         "en": "OIL PRESSURE SWITCH",
         "fr": "Capteur pression huile",
         "models": "462/465/474/472/B12/DAM15DL/之星/小康/昌河/北汽/福汽EX80/福田",
-        "unit": "PCS"
+        "unit": "PCS",
+        "img": "images/products/LB004-DFM1-1017.jpeg"
       },
       {
         "seq": "7",
@@ -917,7 +979,8 @@
         "en": "AIR FILTER COVER",
         "fr": "Cache filtre à air",
         "models": "大宇达马斯",
-        "unit": "PCS"
+        "unit": "PCS",
+        "img": "images/products/LBDY1-4030.jpeg"
       },
       {
         "seq": "8",
@@ -947,7 +1010,8 @@
         "en": "FUEL INJECTOR",
         "fr": "Injecteur de carburant",
         "models": "德尔福二代/德尔福2代/东风小康/哈飞民意/一汽佳宝6371/465",
-        "unit": "PCS"
+        "unit": "PCS",
+        "img": "images/products/LB004-DFM1-1013.jpeg"
       },
       {
         "seq": "11",
@@ -957,7 +1021,8 @@
         "en": "FUEL PUMP ASSEMBLY",
         "fr": "Pompe à carburant",
         "models": "东风小康465/K01/K02/K07/K17/K07S/K05S/吉奥星旺",
-        "unit": "PCS"
+        "unit": "PCS",
+        "img": "images/products/LB007-DFM1-1108.jpeg"
       },
       {
         "seq": "12",
@@ -967,7 +1032,8 @@
         "en": "COMBINATION SWITCH",
         "fr": "Commutateur combiné",
         "models": "长安之星SC6350/东风小康",
-        "unit": "PCS"
+        "unit": "PCS",
+        "img": "images/products/LB014-DFM1-3009.jpeg"
       }
     ]
   }
