@@ -814,7 +814,7 @@ function syncToGithub(){
   .then(function(){
     btn.disabled = false;
     btn.textContent = '📡 保存并同步到线上';
-    status.textContent = '已同步 ' + new Date().toLocaleTimeString('zh-CN', {hour:'2-digit',minute:'2-digit'});
+    status.textContent = '已同步 ' + formatDateTime(new Date());
     status.className = 'sync-status ok';
     localStorage.setItem('lm_last_sync', Date.now());
     hasChanges = false;
@@ -832,12 +832,20 @@ function syncToGithub(){
     showToast('同步失败：' + msg, 'error');
   });
 }
+function formatDateTime(d){
+  var y = d.getFullYear();
+  var m = String(d.getMonth()+1).padStart(2,'0');
+  var day = String(d.getDate()).padStart(2,'0');
+  var h = String(d.getHours()).padStart(2,'0');
+  var min = String(d.getMinutes()).padStart(2,'0');
+  return y + '-' + m + '-' + day + ' ' + h + ':' + min;
+}
 function updateSyncStatus(){
   var last = localStorage.getItem('lm_last_sync');
   var status = document.getElementById('syncStatus');
   if(last && status){
     var d = new Date(parseInt(last));
-    status.textContent = '已同步 ' + d.toLocaleTimeString('zh-CN', {hour:'2-digit',minute:'2-digit'});
+    status.textContent = '已同步 ' + formatDateTime(d);
     status.className = 'sync-status ok';
   }
 }
