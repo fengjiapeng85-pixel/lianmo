@@ -36,7 +36,7 @@
         "fr": "Moteur nu",
         "models": "465EA",
         "unit": "PCS",
-        "img": "images/products/LB001-ENG-1005-A1.png"
+        "img": "images/products/LB001-ENG-1005-A1.jpeg"
       },
       {
         "seq": "4",
@@ -69,7 +69,7 @@
         "fr": "Moteur nu",
         "models": "474",
         "unit": "PCS",
-        "img": "images/products/LB001-ENG-1012-2.png"
+        "img": "images/products/LB001-ENG-1012-2.jpeg"
       },
       {
         "seq": "7",
@@ -135,7 +135,7 @@
         "fr": "Culasse",
         "models": "465",
         "unit": "PCS",
-        "img": "images/products/LB004-DFM1-1005.png"
+        "img": "images/products/LB004-DFM1-1005.jpeg"
       },
       {
         "seq": "13",
@@ -146,7 +146,7 @@
         "fr": "Culasse",
         "models": "F8C",
         "unit": "PCS",
-        "img": "images/products/LB050-DY1-1017.png"
+        "img": "images/products/LB050-DY1-1017.jpeg"
       },
       {
         "seq": "14",
@@ -157,7 +157,7 @@
         "fr": "Culasse",
         "models": "474",
         "unit": "PCS",
-        "img": "images/products/LB007-DFM1-1116.png"
+        "img": "images/products/LB007-DFM1-1116.jpeg"
       },
       {
         "seq": "15",
@@ -334,7 +334,7 @@
         "fr": "Phare avant (Gauche)",
         "models": "东风小康K01H",
         "unit": "PCS",
-        "img": "images/products/LB017-DFM2-3001-L.png"
+        "img": "images/products/LB017-DFM2-3001-L.jpeg"
       },
       {
         "seq": "9",
@@ -345,7 +345,7 @@
         "fr": "Phare avant (Droit)",
         "models": "东风小康K01H",
         "unit": "PCS",
-        "img": "images/products/LB017-DFM2-3001-L.png"
+        "img": "images/products/LB017-DFM2-3001-L.jpeg"
       },
       {
         "seq": "10",
@@ -489,7 +489,7 @@
         "fr": "Rétroviseur (Droit)",
         "models": "东风小康康威/小康K01H/K01S/K05S/K07S",
         "unit": "PCS",
-        "img": "images/products/LB016-DFM1-4027-1R.png"
+        "img": "images/products/LB016-DFM1-4027-1R.jpeg"
       },
       {
         "seq": "6",
@@ -511,7 +511,7 @@
         "fr": "Capot moteur",
         "models": "小康K01H",
         "unit": "PCS",
-        "img": "images/products/LB018-DFM2-4003.png"
+        "img": "images/products/LB018-DFM2-4003.jpeg"
       },
       {
         "seq": "8",
@@ -522,7 +522,7 @@
         "fr": "Grille de pare-chocs",
         "models": "东风小康K07",
         "unit": "SET",
-        "img": "images/products/LB015-DFM1-4017-SET.png"
+        "img": "images/products/LB015-DFM1-4017-SET.jpeg"
       },
       {
         "seq": "9",
@@ -689,7 +689,7 @@
         "fr": "Direction assistée",
         "models": "之星SC6350/东风小康K07",
         "unit": "PCS",
-        "img": "images/products/LB013-DFM1-2155-A.png"
+        "img": "images/products/LB013-DFM1-2155-A.jpeg"
       },
       {
         "seq": "2",

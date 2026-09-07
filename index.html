@@ -766,7 +766,7 @@ function renderGrid(){
     var secondary = state.lang==='en' ? (it.zh) : (it.en || it.zh);
     var imgInfo = getImg(it, entry.ci);
     var imgTag = imgInfo.real ? '' : '<span class="img-tag">'+(state.lang==='zh'?'分类图':state.lang==='fr'?'Illustration':'Category')+'</span>';
-    html += '<article class="card" tabindex="0" data-idx="'+idx+'" role="button">'    + '<div class="card-img"><img src="'+esc(imgInfo.url)+'" alt="'+esc(primary)+'" loading="lazy">'+imgTag+'</div>'
+    html += '<article class="card" tabindex="0" data-idx="'+idx+'" role="button">'    + '<div class="card-img"><img src="'+esc(imgInfo.url)+'" alt="'+esc(primary)+'" loading="lazy" decoding="async">'+imgTag+'</div>'
       + '<div class="card-top">'
       +   '<span class="chip cat-chip">'+esc(catName(c))+'</span>'
       +   '<span class="chip unit-chip">'+esc(it.unit||'—')+'</span>'
