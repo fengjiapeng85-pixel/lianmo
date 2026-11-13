@@ -7,10 +7,10 @@
   <link rel="icon" type="image/png" sizes="64x64" href="favicon-64.png">
   <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-<meta name="description" content="联摩汽配 汽车配件产品目录 | Catalogue des Pièces Automobiles | Auto Parts Catalog">
+<meta name="description" content="联摩汽配 汽车配件产品目录 | Catalogue des Pièces Automobiles | Auto Parts Catalog | كتالوج قطع غيار السيارات">
 <title>联摩汽配 · 产品目录 Catalogue</title>
 <link rel="preconnect" href="https://miaoda.feishu.cn">
-<link rel="stylesheet" href="https://miaoda.feishu.cn/fonts/css2?family=Barlow+Condensed:wght@500;600;700&family=Noto+Sans+SC:wght@400;500;700&display=swap">
+<link rel="stylesheet" href="https://miaoda.feishu.cn/fonts/css2?family=Barlow+Condensed:wght@500;600;700&family=Noto+Sans+SC:wght@400;500;700&family=Noto+Sans+Arabic:wght@400;500;700&display=swap">
 <style>
 :root{
   --graphite:#1B2027;
@@ -32,8 +32,8 @@
   --radius:14px;
   --header-h:56px;
   --toolbar-h:56px;
-  --display:'Barlow Condensed','Noto Sans SC','PingFang SC','Microsoft YaHei',sans-serif;
-  --body:'Noto Sans SC','Noto Sans','PingFang SC','Microsoft YaHei',system-ui,sans-serif;
+  --display:'Barlow Condensed','Noto Sans SC','Noto Sans Arabic','PingFang SC','Microsoft YaHei',sans-serif;
+  --body:'Noto Sans SC','Noto Sans Arabic','Noto Sans','PingFang SC','Microsoft YaHei',system-ui,sans-serif;
   --mono:ui-monospace,'SF Mono','Cascadia Mono','Segoe UI Mono',Consolas,monospace;
 }
 *{margin:0;padding:0;box-sizing:border-box}
@@ -343,6 +343,10 @@ a{color:inherit;text-decoration:none}
   .stat{padding:13px 14px}
   .stat b{font-size:28px}
   .section-head h2{font-size:22px}
+  .lang-btn{min-width:32px;padding:0 6px;font-size:11.5px}
+  .header-inner{gap:8px;padding:0 12px}
+  .brand-name{font-size:16px}
+  .cart-btn{width:38px;height:38px}
 }
 
 /* Hide Netlify badge */
@@ -378,6 +382,78 @@ a[class*="netlify"],a[href*="netlify.com"],div[class*="netlify"],iframe[src*="ne
 .ptr-indicator.ready .ptr-arrow svg{stroke:var(--amber)}
 .ptr-indicator.refreshing .ptr-arrow svg{animation:ptr-spin .8s linear infinite}
 @keyframes ptr-spin{from{transform:rotate(0)}to{transform:rotate(360deg)}}
+/* ===== 购物车 ===== */
+.header-actions{display:flex;align-items:center;gap:10px}
+.cart-btn{
+  position:relative;display:flex;align-items:center;justify-content:center;
+  width:42px;height:42px;border-radius:12px;flex:0 0 auto;
+  background:var(--amber);color:#fff;
+}
+.cart-btn svg{width:21px;height:21px;stroke:currentColor}
+.cart-count{
+  position:absolute;top:-6px;inset-inline-end:-6px;min-width:20px;height:20px;
+  padding:0 5px;border-radius:999px;background:#fff;color:var(--amber-deep);
+  font-size:11.5px;font-weight:700;display:flex;align-items:center;justify-content:center;
+  border:2px solid var(--graphite);
+}
+.cart-count.zero{display:none}
+.cart-mask{position:fixed;inset:0;background:rgba(18,22,28,.5);z-index:290;display:none;backdrop-filter:blur(2px)}
+.cart-mask.show{display:block}
+.cart-drawer{
+  position:fixed;top:0;bottom:0;inset-inline-end:0;z-index:300;
+  width:min(430px,94vw);background:var(--card);display:flex;flex-direction:column;
+  box-shadow:-12px 0 40px rgba(0,0,0,.25);
+  transform:translateX(105%);transition:transform .26s ease;
+}
+[dir="rtl"] .cart-drawer{transform:translateX(-105%);box-shadow:12px 0 40px rgba(0,0,0,.25)}
+.cart-drawer.open{transform:none}
+.cart-head{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:16px 18px;border-bottom:1px solid var(--line)}
+.cart-head h3{font-family:var(--display);font-size:20px;font-weight:700}
+.cart-close{width:36px;height:36px;border-radius:10px;display:flex;align-items:center;justify-content:center;color:var(--muted);background:var(--paper)}
+.cart-close svg{width:18px;height:18px;stroke:currentColor}
+.cart-body{flex:1;overflow-y:auto;padding:14px 18px}
+.cart-empty{padding:36px 10px;text-align:center;color:var(--muted);font-size:14px}
+.cart-item{display:flex;gap:10px;padding:12px 0;border-bottom:1px solid var(--line)}
+.cart-item-info{flex:1;min-width:0}
+.cart-item-name{font-size:14px;font-weight:700;line-height:1.35}
+.cart-item-code{font-family:var(--mono);font-size:11.5px;color:var(--muted);margin-top:2px}
+.cart-qty{display:flex;align-items:center;gap:2px;margin-top:8px}
+.cart-qty button{width:28px;height:28px;border-radius:8px;background:var(--paper);border:1px solid var(--line);font-size:16px;font-weight:700;color:var(--ink);display:flex;align-items:center;justify-content:center}
+.cart-qty .q{min-width:30px;text-align:center;font-weight:700;font-size:14px}
+.cart-item-del{align-self:flex-start;width:30px;height:30px;border-radius:8px;color:var(--muted);font-size:17px}
+.cart-item-del:hover{color:var(--red);background:#FBEDEB}
+.cart-foot{border-top:1px solid var(--line);padding:16px 18px 20px;background:#FAFBF9}
+.cart-form{display:flex;flex-direction:column;gap:10px}
+.cart-form label{display:block;font-size:12px;font-weight:700;color:var(--muted);margin-bottom:5px}
+.cart-form input,.cart-form textarea{
+  width:100%;border:1px solid var(--line);border-radius:10px;background:#fff;
+  padding:10px 12px;font-size:14px;color:var(--ink);outline:none;
+}
+.cart-form input:focus,.cart-form textarea:focus{border-color:var(--amber);box-shadow:0 0 0 3px var(--amber-soft)}
+.cart-form textarea{resize:vertical;min-height:64px}
+.cart-error{display:none;color:var(--red);font-size:13px;font-weight:600}
+.cart-error.show{display:block}
+.cart-actions{display:flex;gap:10px;margin-top:12px}
+.cart-submit{flex:1;height:46px;border-radius:11px;background:#25D366;color:#fff;font-size:14.5px;font-weight:700}
+.cart-submit:hover{filter:brightness(.96)}
+.cart-clear{height:46px;padding:0 16px;border-radius:11px;background:var(--paper);border:1px solid var(--line);font-size:13.5px;font-weight:700;color:var(--muted)}
+.add-btn{
+  width:100%;height:40px;border-radius:10px;margin-top:2px;
+  background:var(--amber);color:#fff;font-size:13.5px;font-weight:700;transition:.15s;
+}
+.add-btn:hover{background:var(--amber-deep)}
+.add-btn.added{background:var(--green)}
+/* ===== RTL (العربية) ===== */
+[dir="rtl"] .search-box svg{left:auto;right:12px}
+[dir="rtl"] .search-box input{padding:0 40px 0 44px}
+[dir="rtl"] .search-clear{right:auto;left:6px}
+[dir="rtl"] .card::before{right:auto;left:14px}
+[dir="rtl"] .card-img .img-tag{left:auto;right:8px}
+[dir="rtl"] .modal-close{right:auto;left:14px}
+[dir="rtl"] .to-top{right:auto;left:18px}
+[dir="rtl"] .lightbox-close{right:auto;left:24px}
+[dir="rtl"] .stat{border-right:none;border-left:1px solid rgba(255,255,255,.12)}
+[dir="rtl"] .stat:last-child{border-left:none}
 </style>
 </head>
 <body>
@@ -396,10 +472,17 @@ a[class*="netlify"],a[href*="netlify.com"],div[class*="netlify"],iframe[src*="ne
     <div class="brand" aria-label="LIANMO AUTO PARTS">
       <span class="brand-name">LIANMO AUTO PARTS</span>
     </div>
+    <div class="header-actions">
+    <button class="cart-btn" id="cartBtn" aria-label="购物车">
+      <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="21" r="1.6"/><circle cx="19" cy="21" r="1.6"/><path d="M2.5 3h2.2l2.5 12.5a1.8 1.8 0 0 0 1.8 1.4h8.6a1.8 1.8 0 0 0 1.8-1.4L21.5 7H6"/></svg>
+      <span class="cart-count zero" id="cartCount">0</span>
+    </button>
     <div class="lang-switch" role="group" aria-label="Language">
       <button class="lang-btn" data-lang="zh" aria-pressed="true">中文</button>
       <button class="lang-btn" data-lang="en" aria-pressed="false">EN</button>
       <button class="lang-btn" data-lang="fr" aria-pressed="false">FR</button>
+      <button class="lang-btn" data-lang="ar">عربي</button>
+    </div>
     </div>
   </div>
 </header>
@@ -439,7 +522,7 @@ a[class*="netlify"],a[href*="netlify.com"],div[class*="netlify"],iframe[src*="ne
   <p style="color:#666;font-size:14px;letter-spacing:.5px">正在加载产品数据…</p>
 </div>
 <style>@keyframes spin{to{transform:rotate(360deg)}}</style>
-<main class="catalog">
+<main class="catalog" id="catalog">
   <div class="section-head">
     <h2 id="secTitle">全部产品</h2>
     <span class="count" id="secCount"></span>
@@ -467,6 +550,34 @@ a[class*="netlify"],a[href*="netlify.com"],div[class*="netlify"],iframe[src*="ne
   </div>
 </footer>
 
+<!-- ===== 购物车 ===== -->
+<div class="cart-mask" id="cartMask"></div>
+<aside class="cart-drawer" id="cartDrawer" aria-label="购物车">
+  <div class="cart-head">
+    <h3 data-i18n="cartTitle">我的订单</h3>
+    <button class="cart-close" id="cartClose" aria-label="关闭">
+      <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"/></svg>
+    </button>
+  </div>
+  <div class="cart-body">
+    <div class="cart-empty" id="cartEmpty" data-i18n="orderEmpty">购物车还是空的，去选几件产品吧。</div>
+    <div id="cartItems"></div>
+  </div>
+  <div class="cart-foot">
+    <form class="cart-form" id="cartForm">
+      <div><label for="coName"><span data-i18n="name">姓名</span> *</label><input id="coName" type="text" autocomplete="name"></div>
+      <div><label for="coPhone"><span data-i18n="phone">电话</span> *</label><input id="coPhone" type="tel" autocomplete="tel"></div>
+      <div><label for="coCity"><span data-i18n="city">城市</span> *</label><input id="coCity" type="text" autocomplete="address-level2"></div>
+      <div><label for="coNotes"><span data-i18n="notes">备注</span> <span data-i18n="notesOpt">（选填）</span></label><textarea id="coNotes" rows="2"></textarea></div>
+      <div class="cart-error" id="cartError"></div>
+      <div class="cart-actions">
+        <button type="submit" class="cart-submit" id="cartSubmit" data-i18n="submitOrder">通过 WhatsApp 发送订单</button>
+        <button type="button" class="cart-clear" id="cartClear" data-i18n="clearCart">清空</button>
+      </div>
+    </form>
+  </div>
+</aside>
+
 <!-- ===== Modal ===== -->
 <div class="modal-mask" id="modalMask" role="dialog" aria-modal="true" aria-label="产品详情">
   <div class="modal" id="modal">
@@ -481,6 +592,7 @@ a[class*="netlify"],a[href*="netlify.com"],div[class*="netlify"],iframe[src*="ne
       <div class="row"><span class="lg">中文</span><span class="nm" id="mZh"></span></div>
       <div class="row"><span class="lg">English</span><span class="nm" id="mEn"></span></div>
       <div class="row"><span class="lg">Français</span><span class="nm" id="mFr"></span></div>
+      <div class="row"><span class="lg">العربية</span><span class="nm" id="mAr"></span></div>
     </div>
     <div class="m-grid">
       <div class="m-cell"><div class="t" data-i18n="unit">单位</div><div class="v" id="mUnit"></div></div>
@@ -491,6 +603,7 @@ a[class*="netlify"],a[href*="netlify.com"],div[class*="netlify"],iframe[src*="ne
       <button id="mPrev" data-i18n="mPrev">上一件</button>
       <button id="mNext" data-i18n="mNext">下一件</button>
     </div>
+    <button class="add-btn" id="mAdd" style="margin-top:12px;height:46px;font-size:14.5px" data-i18n="addToOrder">加入订单</button>
   </div>
 </div>
 
@@ -534,134 +647,174 @@ var I18N = {
   zh:{
     heroKicker:'汽车配件 · 出口摩洛哥',
     heroTitle:'产品目录',
-    heroSub:'面向摩洛哥及北非市场的汽车配件电子目录，覆盖发动机、传动、照明、车身、制动、悬挂转向、冷却、电气点火八大系统，中英法三语对照。',
-    statCat:'系统分类',statItem:'产品条目',statLang:'中英法语',
+    heroSub:'面向摩洛哥及北非市场的汽车配件电子目录，覆盖发动机、传动、照明、车身、制动、悬挂转向、冷却、电气点火八大系统，中英法阿四语对照。',
+    statCat:'系统分类',statItem:'产品条目',statLang:'四语',
     all:'全部',items:'件产品',
     noResult:'未找到匹配的产品',noResultHint:'请尝试其他关键词，或切换分类查看全部产品。',
     searchPh:'搜索产品名称 / 编号 / OE号 / 车型…',
     code:'自编号',oe:'OE号',models:'适用车型',unit:'单位',seq:'序号',
     seeMore:'查看详情',mPrev:'上一件',mNext:'下一件',
-    footerTag:'汽车配件产品目录 | Catalogue des Pièces Automobiles | Auto Parts Catalog',
+    footerTag:'汽车配件产品目录 | Catalogue des Pièces Automobiles | Auto Parts Catalog | كتالوج قطع غيار السيارات',
     fLangZh:'中文 · 简体',fLangEn:'English',fLangFr:'Français',fMarket:'面向摩洛哥 · 北非市场',
     footerNote:'产品信息与适用车型以最新报价为准；如需获取完整价目表或下单，请联系供应商确认。',
     ptrPull:'下拉刷新',ptrRelease:'释放刷新',ptrLoading:'刷新中…',
-    lbHint:'点击空白处或按 ESC 关闭'
+    lbHint:'点击空白处或按 ESC 关闭',
+    cart:'购物车',cartTitle:'我的订单',addToOrder:'加入订单',addedToOrder:'已加入 ✓',
+    orderEmpty:'购物车还是空的，去选几件产品吧。',
+    name:'姓名',phone:'电话',city:'城市',notes:'备注',notesOpt:'（选填）',
+    submitOrder:'通过 WhatsApp 发送订单',clearCart:'清空',
+    fillRequired:'请填写姓名、电话和城市。',confirmPrice:'请确认报价。',
+    newOrder:'新订单',remove:'删除'
   },
   en:{
     heroKicker:'Auto Parts · Exported to Morocco',
     heroTitle:'Product Catalogue',
-    heroSub:'Electronic catalogue of auto parts for Morocco and North Africa: engine, transmission, lighting, body, brake, suspension & steering, cooling, electrical & ignition — in Chinese, English and French.',
-    statCat:'Systems',statItem:'Products',statLang:'3 Languages',
+    heroSub:'Electronic catalogue of auto parts for Morocco and North Africa: engine, transmission, lighting, body, brake, suspension & steering, cooling, electrical & ignition — in Chinese, English, French and Arabic.',
+    statCat:'Systems',statItem:'Products',statLang:'4 Languages',
     all:'All',items:'products',
     noResult:'No matching product found',noResultHint:'Try other keywords, or switch category to view all products.',
     searchPh:'Search name / code / OE no. / vehicle model…',
     code:'Code',oe:'OE No.',models:'Vehicle Models',unit:'Unit',seq:'No.',
     seeMore:'Details',mPrev:'Previous',mNext:'Next',
-    footerTag:'Auto Parts Catalog | Catalogue des Pièces Automobiles | 汽车配件产品目录',
+    footerTag:'Auto Parts Catalog | Catalogue des Pièces Automobiles | 汽车配件产品目录 | كتالوج قطع غيار السيارات',
     fLangZh:'Chinese',fLangEn:'English',fLangFr:'Français',fMarket:'Morocco · North Africa',
     footerNote:'Product information and applicable models are subject to the latest quotation; contact the supplier for the full price list or to place an order.',
     ptrPull:'Pull to refresh',ptrRelease:'Release to refresh',ptrLoading:'Refreshing…',
-    lbHint:'Tap outside or press ESC to close'
+    lbHint:'Tap outside or press ESC to close',
+    cart:'Cart',cartTitle:'My Order',addToOrder:'Add to Order',addedToOrder:'Added ✓',
+    orderEmpty:'Your cart is empty. Pick some products first.',
+    name:'Name',phone:'Phone',city:'City',notes:'Notes',notesOpt:'(optional)',
+    submitOrder:'Send Order via WhatsApp',clearCart:'Clear',
+    fillRequired:'Please fill in your name, phone and city.',confirmPrice:'Please confirm the quotation.',
+    newOrder:'New Order',remove:'Remove'
   },
   fr:{
     heroKicker:'Pièces Auto · Exportées au Maroc',
     heroTitle:'Catalogue Produits',
-    heroSub:'Catalogue électronique de pièces automobiles pour le Maroc et l\u2019Afrique du Nord : moteur, transmission, éclairage, carrosserie, freinage, suspension & direction, refroidissement, électrique & allumage — en chinois, anglais et français.',
-    statCat:'Systèmes',statItem:'Produits',statLang:'3 Langues',
+    heroSub:'Catalogue électronique de pièces automobiles pour le Maroc et l\u2019Afrique du Nord : moteur, transmission, éclairage, carrosserie, freinage, suspension & direction, refroidissement, électrique & allumage — en chinois, anglais, français et arabe.',
+    statCat:'Systèmes',statItem:'Produits',statLang:'4 Langues',
     all:'Tous',items:'produits',
     noResult:'Aucun produit trouvé',noResultHint:'Essayez d\u2019autres mots-clés, ou changez de catégorie pour voir tous les produits.',
     searchPh:'Rechercher nom / code / réf. OE / modèle…',
     code:'Code',oe:'R\u00e9f. OE',models:'Modèles',unit:'Unité',seq:'No.',
     seeMore:'Détails',mPrev:'Précédent',mNext:'Suivant',
-    footerTag:'Catalogue des Pièces Automobiles | Auto Parts Catalog | 汽车配件产品目录',
+    footerTag:'Catalogue des Pièces Automobiles | Auto Parts Catalog | 汽车配件产品目录 | كتالوج قطع غيار السيارات',
     fLangZh:'Chinois',fLangEn:'Anglais',fLangFr:'Français',fMarket:'Maroc · Afrique du Nord',
     footerNote:'Les informations et modèles applicables sont soumis à la dernière cotation ; contactez le fournisseur pour la liste de prix complète ou pour passer commande.',
     ptrPull:'Tirer pour actualiser',ptrRelease:'Relâcher pour actualiser',ptrLoading:'Actualisation…',
-    lbHint:'Appuyez à l extérieur ou sur ESC pour fermer'
+    lbHint:'Appuyez à l extérieur ou sur ESC pour fermer',
+    cart:'Panier',cartTitle:'Ma commande',addToOrder:'Ajouter à la commande',addedToOrder:'Ajouté ✓',
+    orderEmpty:'Votre panier est vide. Choisissez d’abord des produits.',
+    name:'Nom',phone:'Téléphone',city:'Ville',notes:'Remarques',notesOpt:'(facultatif)',
+    submitOrder:'Envoyer la commande via WhatsApp',clearCart:'Vider',
+    fillRequired:'Veuillez renseigner le nom, le téléphone et la ville.',confirmPrice:'Merci de confirmer le devis.',
+    newOrder:'Nouvelle commande',remove:'Retirer'
+  },
+  ar:{
+    heroKicker:'قطع غيار السيارات · تصدير إلى المغرب',
+    heroTitle:'كتالوج المنتجات',
+    heroSub:'كتالوج إلكتروني لقطع غيار السيارات موجّه إلى المغرب وشمال أفريقيا: المحرك، ناقل الحركة، الإضاءة، الهيكل، الفرامل، التعليق والتوجيه، التبريد، الكهرباء والإشعال — باللغات الصينية والإنجليزية والفرنسية والعربية.',
+    statCat:'الأنظمة',statItem:'منتجات',statLang:'4 لغات',
+    all:'الكل',items:'منتجات',
+    noResult:'لم يتم العثور على منتج مطابق',noResultHint:'جرّب كلمات مفتاحية أخرى، أو بدّل الفئة لعرض جميع المنتجات.',
+    searchPh:'ابحث عن اسم المنتج / الرقم / رقم OE / طراز السيارة…',
+    code:'الرقم',oe:'رقم OE',models:'طرازات السيارات',unit:'الوحدة',seq:'رقم',
+    seeMore:'التفاصيل',mPrev:'السابق',mNext:'التالي',
+    footerTag:'كتالوج قطع غيار السيارات | Catalogue des Pièces Automobiles | Auto Parts Catalog | 汽车配件产品目录',
+    fLangZh:'الصينية',fLangEn:'الإنجليزية',fLangFr:'الفرنسية',fLangAr:'العربية',fMarket:'المغرب · شمال أفريقيا',
+    footerNote:'معلومات المنتجات والطرازات المناسبة تخضع لأحدث عرض سعر؛ تواصل مع المورّد للحصول على قائمة الأسعار الكاملة أو لتقديم طلب.',
+    ptrPull:'اسحب للتحديث',ptrRelease:'أفلت للتحديث',ptrLoading:'جارٍ التحديث…',
+    lbHint:'انقر خارج الصورة أو اضغط ESC للإغلاق',
+    cart:'سلة الطلب',cartTitle:'طلبي',addToOrder:'أضف إلى الطلب',addedToOrder:'تمت الإضافة ✓',
+    orderEmpty:'سلة الطلب فارغة. اختر بعض المنتجات أولاً.',
+    name:'الاسم',phone:'رقم الهاتف',city:'المدينة',notes:'ملاحظات',notesOpt:'(اختياري)',
+    submitOrder:'إرسال الطلب عبر واتساب',clearCart:'مسح',
+    fillRequired:'يرجى إدخال الاسم ورقم الهاتف والمدينة.',confirmPrice:'يرجى تأكيد عرض السعر.',
+    newOrder:'طلب جديد',remove:'حذف'
   }
 };
 /* ===== 车型名称翻译 ===== */
 var MODEL_TRANS = [
-    ["东风小康康威","DFSK Kangwei","DFSK Kangwei"],
-    ["东风小康专用","DFSK Specific","DFSK spécifique"],
-    ["奇瑞新QQ","Chery New QQ","Chery New QQ"],
-    ["东风风光","DFSK Glory","DFSK Glory"],
-    ["长安之星","Changan Star","Changan Star"],
-    ["哈飞中意","Hafei Zhongyi","Hafei Zhongyi"],
-    ["哈飞民意","Hafei Minyi","Hafei Minyi"],
-    ["大宇达马斯","Daewoo Damas","Daewoo Damas"],
-    ["大宇马蹄子","Daewoo Matiz","Daewoo Matiz"],
-    ["雪佛兰斯帕克","Chevrolet Spark","Chevrolet Spark"],
-    ["雪佛兰乐驰","Chevrolet Spark","Chevrolet Spark"],
-    ["奇瑞风云","Chery Fulwin","Chery Fulwin"],
-    ["奇瑞QQ","Chery QQ","Chery QQ"],
-    ["开瑞优劲","Karry Youjin","Karry Youjin"],
-    ["开瑞优优","Karry Youyou","Karry Youyou"],
-    ["金杯鑫源","Jinbei Shineray","Jinbei Shineray"],
-    ["长城风骏","Great Wall Wingle","Great Wall Wingle"],
-    ["吉奥星旺","Gonow Xingwang","Gonow Xingwang"],
-    ["力帆丰顺","Lifan Fengshun","Lifan Fengshun"],
-    ["新之星","New Star","Nouveau Star"],
-    ["小海狮","Small Sea Lion","Small Sea Lion"],
-    ["新海狮","New Sea Lion","New Sea Lion"],
-    ["东风小康","DFSK","DFSK"],
-    ["双排加长","Ext. Double Cab","Double cab. all."],
-    ["德尔福","Delphi","Delphi"],
-    ["长安","Changan","Changan"],
-    ["东风","Dongfeng","Dongfeng"],
-    ["小康","DFSK","DFSK"],
-    ["之星","Star","Star"],
-    ["哈飞","Hafei","Hafei"],
-    ["中意","Zhongyi","Zhongyi"],
-    ["民意","Minyi","Minyi"],
-    ["路宝","Lubao","Lubao"],
-    ["昌河","Changhe","Changhe"],
-    ["昌铃王","Changlingwang","Changlingwang"],
-    ["佳宝","Jiabao","Jiabao"],
-    ["五菱","Wuling","Wuling"],
-    ["荣光","Rongguang","Rongguang"],
-    ["大宇","Daewoo","Daewoo"],
-    ["达马斯","Damas","Damas"],
-    ["马蹄子","Matiz","Matiz"],
-    ["铃木","Suzuki","Suzuki"],
-    ["奥拓","Alto","Alto"],
-    ["雪佛兰","Chevrolet","Chevrolet"],
-    ["斯帕克","Spark","Spark"],
-    ["乐驰","Spark","Spark"],
-    ["奇瑞","Chery","Chery"],
-    ["风云","Fulwin","Fulwin"],
-    ["开瑞","Karry","Karry"],
-    ["优劲","Youjin","Youjin"],
-    ["优优","Youyou","Youyou"],
-    ["金杯","Jinbei","Jinbei"],
-    ["鑫源","Shineray","Shineray"],
-    ["长城","Great Wall","Great Wall"],
-    ["风骏","Wingle","Wingle"],
-    ["北汽","BAIC","BAIC"],
-    ["福汽","Fuqi","Fuqi"],
-    ["福田","Foton","Foton"],
-    ["吉奥","Gonow","Gonow"],
-    ["星旺","Xingwang","Xingwang"],
-    ["松花江","Songhuajiang","Songhuajiang"],
-    ["力帆","Lifan","Lifan"],
-    ["丰顺","Fengshun","Fengshun"],
-    ["富康","Fukang","Fukang"],
-    ["江陵","Jiangling","Jiangling"],
-    ["一汽","FAW","FAW"],
-    ["小霸王","Xiaobawang","Xiaobawang"],
-    ["康威","Kangwei","Kangwei"],
-    ["风光","Glory","Glory"],
-    ["福瑞达","Freda","Freda"],
-    ["碟刹","Disc Brake","Frein à disque"],
-    ["单排","Single Cab","Cabine simple"],
-    ["面包","Van","Fourgon"],
-    ["油车","Petrol","Essence"],
-    ["专用","Specific","spécifique"],
-    ["方孔","Square Hole","Trou carré"],
-    ["二代","2nd Gen","2e gén."],
-    ["2代","2nd Gen","2e gén."],
-    ["化","Carb.","Carb."],
-    ["新","New","Nouveau"]
+    ["东风小康康威","DFSK Kangwei","DFSK Kangwei","DFSK Kangwei"],
+    ["东风小康专用","DFSK Specific","DFSK spécifique","DFSK Specific"],
+    ["奇瑞新QQ","Chery New QQ","Chery New QQ","Chery New QQ"],
+    ["东风风光","DFSK Glory","DFSK Glory","DFSK Glory"],
+    ["长安之星","Changan Star","Changan Star","Changan Star"],
+    ["哈飞中意","Hafei Zhongyi","Hafei Zhongyi","Hafei Zhongyi"],
+    ["哈飞民意","Hafei Minyi","Hafei Minyi","Hafei Minyi"],
+    ["大宇达马斯","Daewoo Damas","Daewoo Damas","Daewoo Damas"],
+    ["大宇马蹄子","Daewoo Matiz","Daewoo Matiz","Daewoo Matiz"],
+    ["雪佛兰斯帕克","Chevrolet Spark","Chevrolet Spark","Chevrolet Spark"],
+    ["雪佛兰乐驰","Chevrolet Spark","Chevrolet Spark","Chevrolet Spark"],
+    ["奇瑞风云","Chery Fulwin","Chery Fulwin","Chery Fulwin"],
+    ["奇瑞QQ","Chery QQ","Chery QQ","Chery QQ"],
+    ["开瑞优劲","Karry Youjin","Karry Youjin","Karry Youjin"],
+    ["开瑞优优","Karry Youyou","Karry Youyou","Karry Youyou"],
+    ["金杯鑫源","Jinbei Shineray","Jinbei Shineray","Jinbei Shineray"],
+    ["长城风骏","Great Wall Wingle","Great Wall Wingle","Great Wall Wingle"],
+    ["吉奥星旺","Gonow Xingwang","Gonow Xingwang","Gonow Xingwang"],
+    ["力帆丰顺","Lifan Fengshun","Lifan Fengshun","Lifan Fengshun"],
+    ["新之星","New Star","Nouveau Star","New Star"],
+    ["小海狮","Small Sea Lion","Small Sea Lion","Small Sea Lion"],
+    ["新海狮","New Sea Lion","New Sea Lion","New Sea Lion"],
+    ["东风小康","DFSK","DFSK","DFSK"],
+    ["双排加长","Ext. Double Cab","Double cab. all.","كابينة مزدوجة مطوّلة"],
+    ["德尔福","Delphi","Delphi","Delphi"],
+    ["长安","Changan","Changan","Changan"],
+    ["东风","Dongfeng","Dongfeng","Dongfeng"],
+    ["小康","DFSK","DFSK","DFSK"],
+    ["之星","Star","Star","Star"],
+    ["哈飞","Hafei","Hafei","Hafei"],
+    ["中意","Zhongyi","Zhongyi","Zhongyi"],
+    ["民意","Minyi","Minyi","Minyi"],
+    ["路宝","Lubao","Lubao","Lubao"],
+    ["昌河","Changhe","Changhe","Changhe"],
+    ["昌铃王","Changlingwang","Changlingwang","Changlingwang"],
+    ["佳宝","Jiabao","Jiabao","Jiabao"],
+    ["五菱","Wuling","Wuling","Wuling"],
+    ["荣光","Rongguang","Rongguang","Rongguang"],
+    ["大宇","Daewoo","Daewoo","Daewoo"],
+    ["达马斯","Damas","Damas","Damas"],
+    ["马蹄子","Matiz","Matiz","Matiz"],
+    ["铃木","Suzuki","Suzuki","Suzuki"],
+    ["奥拓","Alto","Alto","Alto"],
+    ["雪佛兰","Chevrolet","Chevrolet","Chevrolet"],
+    ["斯帕克","Spark","Spark","Spark"],
+    ["乐驰","Spark","Spark","Spark"],
+    ["奇瑞","Chery","Chery","Chery"],
+    ["风云","Fulwin","Fulwin","Fulwin"],
+    ["开瑞","Karry","Karry","Karry"],
+    ["优劲","Youjin","Youjin","Youjin"],
+    ["优优","Youyou","Youyou","Youyou"],
+    ["金杯","Jinbei","Jinbei","Jinbei"],
+    ["鑫源","Shineray","Shineray","Shineray"],
+    ["长城","Great Wall","Great Wall","Great Wall"],
+    ["风骏","Wingle","Wingle","Wingle"],
+    ["北汽","BAIC","BAIC","BAIC"],
+    ["福汽","Fuqi","Fuqi","Fuqi"],
+    ["福田","Foton","Foton","Foton"],
+    ["吉奥","Gonow","Gonow","Gonow"],
+    ["星旺","Xingwang","Xingwang","Xingwang"],
+    ["松花江","Songhuajiang","Songhuajiang","Songhuajiang"],
+    ["力帆","Lifan","Lifan","Lifan"],
+    ["丰顺","Fengshun","Fengshun","Fengshun"],
+    ["富康","Fukang","Fukang","Fukang"],
+    ["江陵","Jiangling","Jiangling","Jiangling"],
+    ["一汽","FAW","FAW","FAW"],
+    ["小霸王","Xiaobawang","Xiaobawang","Xiaobawang"],
+    ["康威","Kangwei","Kangwei","Kangwei"],
+    ["风光","Glory","Glory","Glory"],
+    ["福瑞达","Freda","Freda","Freda"],
+    ["碟刹","Disc Brake","Frein à disque","فرامل قرصية"],
+    ["单排","Single Cab","Cabine simple","كابينة مفردة"],
+    ["面包","Van","Fourgon","فان"],
+    ["油车","Petrol","Essence","بنزين"],
+    ["专用","Specific","spécifique","خاص"],
+    ["方孔","Square Hole","Trou carré","فتحة مربعة"],
+    ["二代","2nd Gen","2e gén.","الجيل الثاني"],
+    ["2代","2nd Gen","2e gén.","الجيل الثاني"],
+    ["化","Carb.","Carb.","كربوراتير"],
+    ["新","New","Nouveau","جديد"],
 ];
 function translateModels(text, lang){
   if(!text || lang==='zh') return text;
@@ -669,7 +822,7 @@ function translateModels(text, lang){
   for(var i=0;i<MODEL_TRANS.length;i++){
     var term = MODEL_TRANS[i][0];
     if(result.indexOf(term)!==-1){
-      result = result.split(term).join(' '+MODEL_TRANS[i][lang==='en'?1:2]+' ');
+      result = result.split(term).join(' '+MODEL_TRANS[i][lang==='en'?1:(lang==='ar'?3:2)]+' ');
     }
   }
   result = result.replace(/\s+/g,' ').replace(/\s*\/\s*/g,'/').trim();
@@ -726,7 +879,7 @@ function currentList(){
     if(state.cat !== -1 && state.cat !== ci) return;
     c.items.forEach(function(it){
       if(q){
-        var hay = norm([it.code, it.oe, it.zh, it.en, it.fr, it.models].join(' '));
+        var hay = norm([it.code, it.oe, it.zh, it.en, it.fr, it.ar, it.models, translateModels(it.models, state.lang)].join(' '));
         if(hay.indexOf(q) === -1) return;
       }
       out.push({ci:ci, it:it});
@@ -765,7 +918,7 @@ function renderGrid(){
     var primary = it[state.lang] || it.zh;
     var secondary = state.lang==='en' ? (it.zh) : (it.en || it.zh);
     var imgInfo = getImg(it, entry.ci);
-    var imgTag = imgInfo.real ? '' : '<span class="img-tag">'+(state.lang==='zh'?'分类图':state.lang==='fr'?'Illustration':'Category')+'</span>';
+    var imgTag = imgInfo.real ? '' : '<span class="img-tag">'+(state.lang==='zh'?'分类图':state.lang==='fr'?'Illustration':state.lang==='ar'?'صورة الفئة':'Category')+'</span>';
     html += '<article class="card" tabindex="0" data-idx="'+idx+'" role="button">'    + '<div class="card-img"><img src="'+esc(imgInfo.url)+'" alt="'+esc(primary)+'" loading="lazy" decoding="async">'+imgTag+'</div>'
       + '<div class="card-top">'
       +   '<span class="chip cat-chip">'+esc(catName(c))+'</span>'
@@ -779,6 +932,7 @@ function renderGrid(){
       +   (modelHtml ? '<div class="meta-row"><span class="ml">'+I18N[state.lang].models+'</span><span class="mv">'+modelHtml+more+'</span></div>' : '')
       + '</div>'
       + '<div class="card-see" style="font-size:12px;color:var(--amber-deep);font-weight:600;letter-spacing:.3px">'+I18N[state.lang].seeMore+'</div>'
+      + '<button class="add-btn" data-code="'+esc(it.code)+'">'+I18N[state.lang].addToOrder+'</button>'
       + '</article>';
   });
   grid.innerHTML = html;
@@ -787,7 +941,17 @@ function renderGrid(){
     function open(){ openModal(parseInt(card.getAttribute('data-idx'),10)) }
     card.addEventListener('click', open);
     card.addEventListener('keydown', function(e){
+      if(e.target.closest('button')) return;
       if(e.key==='Enter' || e.key===' '){e.preventDefault(); open();}
+    });
+  });
+  $$('.card .add-btn').forEach(function(btn){
+    btn.addEventListener('click', function(e){
+      e.stopPropagation();
+      addToCart(btn.getAttribute('data-code'));
+      btn.classList.add('added');
+      btn.textContent = I18N[state.lang].addedToOrder;
+      setTimeout(function(){ btn.classList.remove('added'); btn.textContent = I18N[state.lang].addToOrder; }, 1200);
     });
   });
 }
@@ -809,12 +973,14 @@ function openModal(idx){
   $('#mZh').textContent = it.zh || '—';
   $('#mEn').textContent = it.en || '—';
   $('#mFr').textContent = it.fr || '—';
+  $('#mAr').textContent = it.ar || '—';
   $('#mUnit').textContent = it.unit || '—';
   $('#mOe').textContent = it.oe || '—';
   var models = splitModels(translateModels(it.models, state.lang));
   $('#mModels').innerHTML = models.length ? models.map(function(m){return '<span class="seg">'+esc(m)+'</span>'}).join('') : '—';
   $('#mPrev').disabled = idx===0;
   $('#mNext').disabled = idx===state.list.length-1;
+  $('#mAdd').setAttribute('data-code', it.code);
   $('#modalMask').classList.add('show');
   document.body.style.overflow = 'hidden';
 }
@@ -826,6 +992,14 @@ $('#modalClose').addEventListener('click', closeModal);
 $('#modalMask').addEventListener('click', function(e){ if(e.target===this) closeModal(); });
 $('#mPrev').addEventListener('click', function(){ if(state.current>0) openModal(state.current-1) });
 $('#mNext').addEventListener('click', function(){ if(state.current<state.list.length-1) openModal(state.current+1) });
+$('#mAdd').addEventListener('click', function(){
+  var code = this.getAttribute('data-code');
+  if(!code) return;
+  addToCart(code);
+  var b = this;
+  b.classList.add('added'); b.textContent = I18N[state.lang].addedToOrder;
+  setTimeout(function(){ b.classList.remove('added'); b.textContent = I18N[state.lang].addToOrder; }, 1200);
+});
 document.addEventListener('keydown', function(e){
   if(!$('#modalMask').classList.contains('show')) return;
   if(e.key==='Escape') closeModal();
@@ -926,6 +1100,149 @@ document.addEventListener('keydown', function(e){
   });
 })();
 
+/* ===== 购物车 + WhatsApp 下单 ===== */
+/* 订单发到公司 WhatsApp 生意号：摩洛哥本地号 0786772738，国际格式 +212（去掉前面的 0） */
+var ORDER_WHATSAPP = '212786772738';
+var CART_KEY = 'lm_cart';
+var cart = [];
+function loadCart(){
+  try{
+    var raw = localStorage.getItem(CART_KEY);
+    var arr = raw ? JSON.parse(raw) : [];
+    cart = Array.isArray(arr) ? arr.filter(function(x){ return x && x.code; }) : [];
+  }catch(e){ cart = []; }
+}
+function saveCart(){
+  try{ localStorage.setItem(CART_KEY, JSON.stringify(cart)); }catch(e){}
+}
+function findItem(code){
+  for(var ci=0; ci<CATALOG_DATA.length; ci++){
+    var items = CATALOG_DATA[ci].items;
+    for(var i=0;i<items.length;i++){ if(items[i].code===code) return items[i]; }
+  }
+  return null;
+}
+function cartCount(){ var n=0; cart.forEach(function(x){ n+=x.qty; }); return n; }
+function updateCartBadge(){
+  var el = $('#cartCount');
+  if(!el) return;
+  var n = cartCount();
+  el.textContent = n;
+  el.classList.toggle('zero', n===0);
+}
+function addToCart(code){
+  if(!code) return;
+  var found = null;
+  cart.forEach(function(x){ if(x.code===code) found=x; });
+  if(found) found.qty += 1; else cart.push({code:code, qty:1});
+  saveCart(); updateCartBadge(); renderCart();
+}
+function setQty(code, qty){
+  for(var i=0;i<cart.length;i++){
+    if(cart[i].code===code){
+      if(qty<=0) cart.splice(i,1); else cart[i].qty = qty;
+      break;
+    }
+  }
+  saveCart(); updateCartBadge(); renderCart();
+}
+function removeFromCart(code){ setQty(code, 0); }
+function clearCart(){
+  cart = [];
+  saveCart(); updateCartBadge(); renderCart();
+}
+function renderCart(){
+  var box = $('#cartItems'), empty = $('#cartEmpty');
+  if(!box) return;
+  if(!cart.length){
+    box.innerHTML = '';
+    if(empty) empty.style.display = 'block';
+    return;
+  }
+  if(empty) empty.style.display = 'none';
+  var html = '';
+  cart.forEach(function(x){
+    var it = findItem(x.code);
+    var nm = it ? (it[state.lang] || it.zh) : x.code;
+    html += '<div class="cart-item">'
+      + '<div class="cart-item-info">'
+      +   '<div class="cart-item-name">'+esc(nm)+'</div>'
+      +   '<div class="cart-item-code">'+esc(x.code)+'</div>'
+      +   '<div class="cart-qty">'
+      +     '<button type="button" data-act="dec" data-code="'+esc(x.code)+'" aria-label="\u2212">\u2212</button>'
+      +     '<span class="q">\u00d7 '+x.qty+'</span>'
+      +     '<button type="button" data-act="inc" data-code="'+esc(x.code)+'" aria-label="+">+</button>'
+      +   '</div>'
+      + '</div>'
+      + '<button type="button" class="cart-item-del" data-act="del" data-code="'+esc(x.code)+'" aria-label="'+esc(I18N[state.lang].remove)+'">\u00d7</button>'
+      + '</div>';
+  });
+  box.innerHTML = html;
+  $$('#cartItems [data-act]').forEach(function(b){
+    b.addEventListener('click', function(){
+      var code = b.getAttribute('data-code'), act = b.getAttribute('data-act');
+      var cur = null;
+      cart.forEach(function(x){ if(x.code===code) cur=x; });
+      if(act==='inc') setQty(code, (cur?cur.qty:0)+1);
+      else if(act==='dec') setQty(code, (cur?cur.qty:0)-1);
+      else if(act==='del') removeFromCart(code);
+    });
+  });
+}
+function buildOrderMessage(info){
+  var t = I18N[state.lang];
+  var lines = [t.newOrder, '--------------------'];
+  cart.forEach(function(x){
+    var it = findItem(x.code);
+    var nm = it ? (it[state.lang] || it.zh) : x.code;
+    lines.push(x.code + ' \u00d7 ' + x.qty + ' ' + nm);
+  });
+  lines.push('--------------------');
+  lines.push(t.name + ': ' + info.name);
+  lines.push(t.phone + ': ' + info.phone);
+  lines.push(t.city + ': ' + info.city);
+  if(info.notes) lines.push(t.notes + ': ' + info.notes);
+  lines.push(t.confirmPrice);
+  return lines.join('\n');
+}
+function submitOrder(e){
+  if(e) e.preventDefault();
+  var err = $('#cartError');
+  function fail(msg){ if(err){ err.textContent = msg; err.classList.add('show'); } }
+  if(err) err.classList.remove('show');
+  if(!cart.length){ fail(I18N[state.lang].orderEmpty); return; }
+  var info = {
+    name: $('#coName').value.trim(),
+    phone: $('#coPhone').value.trim(),
+    city: $('#coCity').value.trim(),
+    notes: $('#coNotes').value.trim()
+  };
+  if(!info.name || !info.phone || !info.city){ fail(I18N[state.lang].fillRequired); return; }
+  var msg = buildOrderMessage(info);
+  var url = 'https://wa.me/' + ORDER_WHATSAPP + '?text=' + encodeURIComponent(msg);
+  window.open(url, '_blank');
+}
+function openCart(){
+  renderCart();
+  $('#cartDrawer').classList.add('open');
+  $('#cartMask').classList.add('show');
+  document.body.style.overflow = 'hidden';
+}
+function closeCart(){
+  $('#cartDrawer').classList.remove('open');
+  $('#cartMask').classList.remove('show');
+  document.body.style.overflow = '';
+}
+$('#cartBtn').addEventListener('click', openCart);
+$('#cartClose').addEventListener('click', closeCart);
+$('#cartMask').addEventListener('click', closeCart);
+$('#cartClear').addEventListener('click', function(){ clearCart(); });
+$('#cartForm').addEventListener('submit', submitOrder);
+document.addEventListener('keydown', function(e){
+  if(e.key==='Escape' && $('#cartDrawer').classList.contains('open')) closeCart();
+});
+loadCart(); updateCartBadge(); renderCart();
+
 /* ===== 语言切换 ===== */
 function applyLang(lang){
   state.lang = lang;
@@ -942,7 +1259,9 @@ function applyLang(lang){
   });
   $('#search').placeholder = I18N[lang].searchPh;
   document.documentElement.lang = lang==='zh'?'zh-CN':lang;
-  renderTabs(); renderGrid();
+  document.documentElement.dir = lang==='ar' ? 'rtl' : 'ltr';
+  renderTabs(); renderGrid(); renderCart();
+  var cb = $('#cartBtn'); if(cb) cb.setAttribute('aria-label', I18N[lang].cart);
 }
 $$('.lang-btn').forEach(function(b){
   b.addEventListener('click', function(){ applyLang(b.getAttribute('data-lang')) });
@@ -971,8 +1290,9 @@ toTop.addEventListener('click', function(){ window.scrollTo({top:0, behavior:'sm
 function init(){
   var saved = null;
   try{ saved = localStorage.getItem('lm_lang') }catch(e){}
-  var detected = (navigator.language||'').toLowerCase().indexOf('fr')===0 ? 'fr' : 'zh';
-  applyLang(saved && ['zh','en','fr'].indexOf(saved)>-1 ? saved : detected);
+  var _bl = (navigator.language||'').toLowerCase();
+  var detected = _bl.indexOf('ar')===0 ? 'ar' : (_bl.indexOf('fr')===0 ? 'fr' : 'zh');
+  applyLang(saved && ['zh','en','fr','ar'].indexOf(saved)>-1 ? saved : detected);
 }
 function loadData(){
   var loading = document.getElementById('loadingTip');
