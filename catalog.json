@@ -28,7 +28,8 @@
         "fr": "Moteur nu",
         "ar": "محرك بدون ملحقات",
         "models": "465QB",
-        "unit": "PCS"
+        "unit": "PCS",
+        "img": "images/products/LBENG-1120.png"
       },
       {
         "seq": "3",
@@ -239,7 +240,8 @@
         "fr": "Feu arrière (Gauche)",
         "ar": "المصباح الخلفي الأيسر",
         "models": "昌河1018面包/大宇达马斯",
-        "unit": "PCS"
+        "unit": "PCS",
+        "img": "images/products/LB061-LM3-4010-L.png"
       },
       {
         "seq": "3",
@@ -250,7 +252,8 @@
         "fr": "Feu arrière (Droit)",
         "ar": "المصباح الخلفي الأيمن",
         "models": "昌河1018面包/大宇达马斯",
-        "unit": "PCS"
+        "unit": "PCS",
+        "img": "images/products/LB061-LM3-4010-R.png"
       },
       {
         "seq": "4",
@@ -285,7 +288,8 @@
         "fr": "Feu de pare-chocs avant (Gauche)",
         "ar": "مصباح المصد الأمامي الأيسر",
         "models": "大宇达马斯/410",
-        "unit": "PCS"
+        "unit": "PCS",
+        "img": "images/products/LB053-DY1-3003-L-BS.png"
       },
       {
         "seq": "7",
@@ -296,7 +300,8 @@
         "fr": "Feu de pare-chocs avant (Droit)",
         "ar": "مصباح المصد الأمامي الأيمن",
         "models": "大宇达马斯/410",
-        "unit": "PCS"
+        "unit": "PCS",
+        "img": "images/products/LB053-DY1-3003-R-BS.png"
       },
       {
         "seq": "8",
@@ -353,7 +358,8 @@
         "fr": "Phare avant (Gauche)",
         "ar": "المصباح الأمامي الأيسر",
         "models": "长安之星",
-        "unit": "PCS"
+        "unit": "PCS",
+        "img": "images/products/LB020-CA1-3003-L.png"
       },
       {
         "seq": "13",
@@ -364,7 +370,8 @@
         "fr": "Phare avant (Droit)",
         "ar": "المصباح الأمامي الأيمن",
         "models": "长安之星",
-        "unit": "PCS"
+        "unit": "PCS",
+        "img": "images/products/LB020-CA1-3003-R.png"
       },
       {
         "seq": "14",
@@ -375,7 +382,8 @@
         "fr": "Phare avant (Gauche)",
         "ar": "المصباح الأمامي الأيسر",
         "models": "小康K07S",
-        "unit": "PCS"
+        "unit": "PCS",
+        "img": "images/products/LBDFM1-4155-DL.png"
       },
       {
         "seq": "15",
@@ -386,7 +394,8 @@
         "fr": "Phare avant (Droit)",
         "ar": "المصباح الأمامي الأيمن",
         "models": "小康K07S",
-        "unit": "PCS"
+        "unit": "PCS",
+        "img": "images/products/LBDFM1-4155-DR.png"
       },
       {
         "seq": "16",
@@ -397,7 +406,8 @@
         "fr": "Phare avant (Gauche)",
         "ar": "المصباح الأمامي الأيسر",
         "models": "哈飞中意",
-        "unit": "PCS"
+        "unit": "PCS",
+        "img": "images/products/LB027-HF1-3004-L.png"
       },
       {
         "seq": "17",
@@ -408,7 +418,8 @@
         "fr": "Phare avant (Droit)",
         "ar": "المصباح الأمامي الأيمن",
         "models": "哈飞中意",
-        "unit": "PCS"
+        "unit": "PCS",
+        "img": "images/products/LB027-HF1-3004-R.png"
       }
     ]
   },
@@ -537,18 +548,20 @@
         "fr": "Serrure de porte avant (Gauche)",
         "ar": "قفل الباب الأمامي الأيسر",
         "models": "昌河1018/昌铃王/佳宝6350/T51/大宇达马斯",
-        "unit": "PCS"
+        "unit": "PCS",
+        "img": "images/products/LBLM3-4013-L.png"
       },
       {
         "seq": "16",
         "code": "LBLM3-4013-R",
         "oe": "94586743",
         "zh": "前门锁块R",
-        "en": "FRONT DOOR LOCK LEFT",
-        "fr": "Serrure de porte avant (Gauche)",
+        "en": "FRONT DOOR LOCK RIGHT",
+        "fr": "Serrure de porte avant (Droite)",
         "ar": "قفل الباب الأمامي الأيمن",
         "models": "昌河1018/昌铃王/佳宝6350/T51/大宇达马斯",
-        "unit": "PCS"
+        "unit": "PCS",
+        "img": "images/products/LBLM3-4013-R.png"
       },
       {
         "seq": "18",
@@ -559,7 +572,8 @@
         "fr": "Pare-chocs avant",
         "ar": "المصد الأمامي",
         "models": "小康K01H",
-        "unit": "PCS"
+        "unit": "PCS",
+        "img": "images/products/LB018-DFM2-4002-1.png"
       }
     ]
   },
@@ -589,7 +603,7 @@
         "oe": "3502470-01",
         "zh": "后分泵L",
         "en": "BRAKE CYLINDER LEFT",
-        "fr": "Cylindre de frein arrière",
+        "fr": "Cylindre de frein arrière gauche",
         "ar": "أسطوانة الفرامل الخلفية اليسرى",
         "models": "之星SC6350/东风小康",
         "unit": "PCS",
@@ -600,8 +614,8 @@
         "code": "LB013-DFM1-2135-BR",
         "oe": "3502470-01",
         "zh": "后分泵R",
-        "en": "BRAKE CYLINDER LEFT",
-        "fr": "Cylindre de frein arrière",
+        "en": "BRAKE CYLINDER RIGHT",
+        "fr": "Cylindre de frein arrière droit",
         "ar": "أسطوانة الفرامل الخلفية اليمنى",
         "models": "之星SC6350/东风小康",
         "unit": "PCS",
@@ -638,7 +652,8 @@
         "fr": "Cache-poussière colonne direction",
         "ar": "غطاء الغبار لعلبة التوجيه",
         "models": "开瑞优劲/开瑞优优/东风小康/长安之星/五菱荣光",
-        "unit": "PCS"
+        "unit": "PCS",
+        "img": "images/products/LB041-WL3-2002.png"
       },
       {
         "seq": "3",
@@ -745,7 +760,8 @@
         "fr": "Bras de suspension",
         "ar": "ذراع التعليق السفلي",
         "models": "奇瑞QQ//雪佛兰乐驰/大宇马蹄子MATIZ/雪佛兰斯帕克/奇瑞新QQ/J00/S15",
-        "unit": "PCS"
+        "unit": "PCS",
+        "img": "images/products/LB064-AT1-2025-H-SET.jpeg"
       },
       {
         "seq": "12",
@@ -892,8 +908,8 @@
         "code": "LBCH3-3022",
         "oe": "",
         "zh": "电油泵",
-        "en": "ELECTRIC OIL PUMP",
-        "fr": "Pompe à huile électrique",
+        "en": "ELECTRIC FUEL PUMP",
+        "fr": "Pompe à carburant électrique",
         "ar": "مضخة الوقود الكهربائية",
         "models": "465/长安之星/小康/SK410/铃木CARRY",
         "unit": "PCS",
@@ -956,7 +972,8 @@
         "fr": "Contacteur dallumage",
         "ar": "قفل الإشعال",
         "models": "大宇达马斯",
-        "unit": "PCS"
+        "unit": "PCS",
+        "img": "images/products/LBDY1-2059.png"
       },
       {
         "seq": "9",
@@ -967,7 +984,8 @@
         "fr": "Démarreur",
         "ar": "بادئ التشغيل",
         "models": "大宇达马斯",
-        "unit": "PCS"
+        "unit": "PCS",
+        "img": "images/products/LBDY1-1059.png"
       },
       {
         "seq": "10",
