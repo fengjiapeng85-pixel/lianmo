@@ -3,7 +3,10 @@
 <head>
 <meta charset="UTF-8">
   <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <link rel="icon" href="favicon.ico" sizes="any">
+  <link rel="icon" type="image/png" sizes="16x16" href="favicon-16.png">
   <link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
+  <link rel="icon" type="image/png" sizes="48x48" href="favicon-48.png">
   <link rel="icon" type="image/png" sizes="64x64" href="favicon-64.png">
   <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
@@ -186,7 +189,8 @@ a{color:inherit;text-decoration:none}
 }
 .sec-right{display:flex;align-items:center;gap:12px}
 .view-switch{display:flex;align-items:center;gap:2px;background:#E8EAE6;border-radius:999px;padding:3px}
-.view-btn{min-height:28px;padding:0 12px;border-radius:999px;font-size:12px;font-weight:700;color:var(--muted);transition:.15s;white-space:nowrap}
+.view-btn{min-width:32px;min-height:28px;padding:0 6px;border-radius:999px;font-size:12px;font-weight:700;color:var(--muted);transition:.15s;white-space:nowrap;display:inline-flex;align-items:center;justify-content:center}
+.view-btn svg{width:17px;height:17px;display:block}
 .view-btn.active{background:var(--graphite);color:#fff}
 .section-head h2{font-family:var(--display);font-weight:600;font-size:26px;letter-spacing:.3px}
 .section-head .count{font-size:13.5px;color:var(--muted);font-weight:500;white-space:nowrap}
@@ -279,9 +283,23 @@ a{color:inherit;text-decoration:none}
 .empty p{font-size:13px;max-width:380px}
 
 /* ===== Footer ===== */
-.site-footer{background:var(--graphite);color:rgba(255,255,255,.7);margin-top:8px}
+.site-footer{background:var(--graphite);color:rgba(255,255,255,.7);margin-top:32px}
 .footer-inner{max-width:1200px;margin:0 auto;padding:40px 18px 32px}
-.footer-brand{margin-bottom:14px}
+.footer-top{display:flex;flex-wrap:wrap;gap:28px;justify-content:space-between;margin-bottom:20px}
+.footer-brand{display:flex;gap:12px;align-items:center}
+.footer-logo{width:48px;height:48px;border-radius:10px;background:#fff;flex:none}
+.footer-brand b{display:block}
+.footer-sub{display:block;font-size:12px;color:rgba(255,255,255,.55);margin-top:3px}
+.footer-h{font-size:12px;font-weight:800;letter-spacing:.08em;color:#fff;margin-bottom:12px}
+.footer-link{display:flex;gap:9px;align-items:flex-start;color:rgba(255,255,255,.78);text-decoration:none;font-size:13px;line-height:1.55;margin-bottom:10px;max-width:340px}
+.footer-link svg{flex:none;width:16px;height:16px;margin-top:2px}
+.footer-link:hover{color:#fff;text-decoration:underline}
+.footer-social{display:flex;gap:10px}
+.soc{width:42px;height:42px;border-radius:50%;display:flex;align-items:center;justify-content:center;color:#fff;text-decoration:none;flex:none}
+.soc.wa{background:#25D366}
+.soc.fb{background:#1877F2}
+.soc.ig{background:linear-gradient(45deg,#f09433,#e6683c,#dc2743,#cc2366,#bc1888)}
+.soc svg{width:21px;height:21px;display:block}
 .footer-brand b{font-family:var(--display);font-size:19px;color:#fff;letter-spacing:.4px}
 .footer-tag{font-size:12.5px;color:rgba(255,255,255,.55);max-width:640px;line-height:1.7;margin:0}
 .footer-langs{
@@ -543,8 +561,8 @@ a[class*="netlify"],a[href*="netlify.com"],div[class*="netlify"],iframe[src*="ne
     <div class="sec-right">
       <span class="count" id="secCount"></span>
       <div class="view-switch" role="group" aria-label="视图切换">
-        <button class="view-btn active" data-view="single" aria-pressed="true"><span data-i18n="viewSingle">单排</span></button>
-        <button class="view-btn" data-view="double" aria-pressed="false"><span data-i18n="viewDouble">双排</span></button>
+        <button class="view-btn active" data-view="single" aria-pressed="true" data-i18n-aria="viewSingle" title="单排"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="5" y="5" width="14" height="14" rx="1.5"/></svg></button>
+        <button class="view-btn" data-view="double" aria-pressed="false" data-i18n-aria="viewDouble" title="双排"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4" y="4" width="7" height="7" rx="1"/><rect x="13" y="4" width="7" height="7" rx="1"/><rect x="4" y="13" width="7" height="7" rx="1"/><rect x="13" y="13" width="7" height="7" rx="1"/></svg></button>
       </div>
     </div>
   </div>
@@ -563,8 +581,26 @@ a[class*="netlify"],a[href*="netlify.com"],div[class*="netlify"],iframe[src*="ne
 <!-- ===== Footer ===== -->
 <footer class="site-footer">
   <div class="footer-inner">
-    <div class="footer-brand">
-      <b>联摩汽配 · Lianmo Auto Parts</b>
+    <div class="footer-top">
+      <div class="footer-brand">
+        <img class="footer-logo" src="apple-touch-icon.png" alt="LIANMO AUTO PARTS">
+        <div>
+          <b>联摩汽配 · Lianmo Auto Parts</b>
+          <span class="footer-sub">SFGOLD · <span data-i18n="footTag">汽车配件批发</span></span>
+        </div>
+      </div>
+      <div class="footer-col">
+        <div class="footer-h"><span data-i18n="contactUs">联系我们</span></div>
+        <a class="footer-link" href="https://www.google.com/maps/search/?api=1&amp;query=Lot+N%C2%B014+Lotissement+La+Marsouille%2C+ZI+Bernoussi%2C+Casablanca" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-6.8-5.8-6.8-10.8a6.8 6.8 0 1 1 13.6 0C18.8 15.2 12 21 12 21z"/><circle cx="12" cy="10.2" r="2.4" fill="currentColor" stroke="none"/></svg><span>Lot N°14, Lotissement La Marsouille, ZI Bernoussi, Casablanca, Maroc</span></a>
+        <a class="footer-link" href="https://wa.me/212786772738" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3.8c-4.5 0-8.2 3-8.2 6.8 0 2 .9 3.8 2.4 5L5.4 19l3.7-1.5c.9.2 1.9.4 2.9.4 4.5 0 8.2-3 8.2-6.8S16.5 3.8 12 3.8z"/></svg><span>WhatsApp · +212 786 772 738</span></a>
+      </div>
+      <div class="footer-col">
+        <div class="footer-h"><span data-i18n="followUs">关注我们</span></div>
+        <div class="footer-social">
+          <a class="soc wa" href="https://wa.me/212786772738" target="_blank" rel="noopener" aria-label="WhatsApp"><svg viewBox="0 0 24 24" fill="#fff"><path d="M12 3.8c-4.5 0-8.2 3-8.2 6.8 0 2 .9 3.8 2.4 5L5.4 19l3.7-1.5c.9.2 1.9.4 2.9.4 4.5 0 8.2-3 8.2-6.8S16.5 3.8 12 3.8z"/></svg></a>
+          <a class="soc ig" href="https://instagram.com/onetuluo" target="_blank" rel="noopener" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2"><rect x="3.5" y="3.5" width="17" height="17" rx="5"/><circle cx="12" cy="12" r="3.8"/><circle cx="17.2" cy="6.8" r="1.2" fill="#fff" stroke="none"/></svg></a>
+        </div>
+      </div>
     </div>
     <p class="footer-tag" data-i18n="footerTag">汽车配件产品目录 | Catalogue des Pièces Automobiles | Auto Parts Catalog</p>
     <p class="footer-note" data-i18n="footerNote">产品信息与适用车型以最新报价为准；如需获取完整价目表或下单，请联系供应商确认。</p>
@@ -670,7 +706,7 @@ var I18N = {
     heroTitle:'产品目录',
     heroSub:'面向摩洛哥及北非市场的汽车配件电子目录，覆盖发动机、传动、照明、车身、制动、悬挂转向、冷却、电气点火八大系统，中英法阿四语对照。',
     statCat:'系统分类',statItem:'产品条目',statLang:'四语',
-    all:'全部',items:'件产品',viewSingle:'单排',viewDouble:'双排',
+    all:'全部',items:'件产品',viewSingle:'单排',viewDouble:'双排',contactUs:'联系我们',footTag:'汽车配件批发',followUs:'关注我们',
     noResult:'未找到匹配的产品',noResultHint:'请尝试其他关键词，或切换分类查看全部产品。',
     searchPh:'搜索产品名称 / 编号 / OE号 / 车型…',
     code:'自编号',oe:'OE号',models:'适用车型',unit:'单位',seq:'序号',
@@ -692,7 +728,7 @@ var I18N = {
     heroTitle:'Product Catalogue',
     heroSub:'Electronic catalogue of auto parts for Morocco and North Africa: engine, transmission, lighting, body, brake, suspension & steering, cooling, electrical & ignition — in Chinese, English, French and Arabic.',
     statCat:'Systems',statItem:'Products',statLang:'4 Languages',
-    all:'All',items:'products',viewSingle:'1 col',viewDouble:'2 col',
+    all:'All',items:'products',viewSingle:'1 col',viewDouble:'2 col',contactUs:'Contact us',footTag:'Auto parts wholesale',followUs:'Follow us',
     noResult:'No matching product found',noResultHint:'Try other keywords, or switch category to view all products.',
     searchPh:'Search name / code / OE no. / vehicle model…',
     code:'Code',oe:'OE No.',models:'Vehicle Models',unit:'Unit',seq:'No.',
@@ -714,7 +750,7 @@ var I18N = {
     heroTitle:'Catalogue Produits',
     heroSub:'Catalogue électronique de pièces automobiles pour le Maroc et l\u2019Afrique du Nord : moteur, transmission, éclairage, carrosserie, freinage, suspension & direction, refroidissement, électrique & allumage — en chinois, anglais, français et arabe.',
     statCat:'Systèmes',statItem:'Produits',statLang:'4 Langues',
-    all:'Tous',items:'produits',viewSingle:'1 col.',viewDouble:'2 col.',
+    all:'Tous',items:'produits',viewSingle:'1 col.',viewDouble:'2 col.',contactUs:'Contactez-nous',footTag:'Pièces auto en gros',followUs:'Suivez-nous',
     noResult:'Aucun produit trouvé',noResultHint:'Essayez d\u2019autres mots-clés, ou changez de catégorie pour voir tous les produits.',
     searchPh:'Rechercher nom / code / réf. OE / modèle…',
     code:'Code',oe:'R\u00e9f. OE',models:'Modèles',unit:'Unité',seq:'No.',
@@ -736,7 +772,7 @@ var I18N = {
     heroTitle:'كتالوج المنتجات',
     heroSub:'كتالوج إلكتروني لقطع غيار السيارات موجّه إلى المغرب وشمال أفريقيا: المحرك، ناقل الحركة، الإضاءة، الهيكل، الفرامل، التعليق والتوجيه، التبريد، الكهرباء والإشعال — باللغات الصينية والإنجليزية والفرنسية والعربية.',
     statCat:'الأنظمة',statItem:'منتجات',statLang:'4 لغات',
-    all:'الكل',items:'منتجات',viewSingle:'عمود',viewDouble:'عمودان',
+    all:'الكل',items:'منتجات',viewSingle:'عمود',viewDouble:'عمودان',contactUs:'تواصل معنا',footTag:'بيع قطع غيار السيارات بالجملة',followUs:'تابعنا',
     noResult:'لم يتم العثور على منتج مطابق',noResultHint:'جرّب كلمات مفتاحية أخرى، أو بدّل الفئة لعرض جميع المنتجات.',
     searchPh:'ابحث عن اسم المنتج / الرقم / رقم OE / طراز السيارة…',
     code:'الرقم',oe:'رقم OE',models:'طرازات السيارات',unit:'الوحدة',seq:'رقم',
@@ -1295,6 +1331,10 @@ function applyLang(lang){
   Object.keys(I18N[lang]).forEach(function(k){
     if(k==='searchPh') return;
     $$('[data-i18n="'+k+'"]').forEach(function(el){ el.textContent = I18N[lang][k] });
+    $$('[data-i18n-aria="'+k+'"]').forEach(function(el){
+      el.setAttribute('aria-label', I18N[lang][k]);
+      el.setAttribute('title', I18N[lang][k]);
+    });
   });
   $('#search').placeholder = I18N[lang].searchPh;
   document.documentElement.lang = lang==='zh'?'zh-CN':lang;
