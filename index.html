@@ -181,9 +181,13 @@ a{color:inherit;text-decoration:none}
 /* ===== Catalog ===== */
 .catalog{max-width:1200px;margin:0 auto;padding:28px 18px 60px}
 .section-head{
-  display:flex;align-items:baseline;justify-content:space-between;gap:12px;
+  display:flex;align-items:baseline;justify-content:space-between;gap:12px;flex-wrap:wrap;
   margin-bottom:18px;
 }
+.sec-right{display:flex;align-items:center;gap:12px}
+.view-switch{display:flex;align-items:center;gap:2px;background:#E8EAE6;border-radius:999px;padding:3px}
+.view-btn{min-height:28px;padding:0 12px;border-radius:999px;font-size:12px;font-weight:700;color:var(--muted);transition:.15s;white-space:nowrap}
+.view-btn.active{background:var(--graphite);color:#fff}
 .section-head h2{font-family:var(--display);font-weight:600;font-size:26px;letter-spacing:.3px}
 .section-head .count{font-size:13.5px;color:var(--muted);font-weight:500;white-space:nowrap}
 .result-line{display:flex;align-items:center;gap:8px;font-size:13.5px;color:var(--muted);margin-bottom:16px}
@@ -192,6 +196,17 @@ a{color:inherit;text-decoration:none}
 .grid{
   display:grid;grid-template-columns:repeat(auto-fill,minmax(252px,1fr));gap:16px;
 }
+/* 双排视图：固定两列 + 紧凑卡片 */
+.grid.two-col{grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
+.grid.two-col .card{padding:10px;gap:6px}
+.grid.two-col .card-img{height:clamp(104px,28vw,190px);margin:-10px -10px 0}
+.grid.two-col .card-name{font-size:14px}
+.grid.two-col .card-name-en,.grid.two-col .card-meta,.grid.two-col .card-see,.grid.two-col .unit-chip{display:none}
+.grid.two-col .card-top{flex-wrap:wrap}
+.grid.two-col .code-plate{padding:7px 9px}
+.grid.two-col .code-plate .cv{font-size:11px}
+.grid.two-col .add-btn{height:36px;font-size:12.5px}
+.grid.two-col .chip{height:20px;font-size:10px;padding:0 7px}
 
 /* parts-tag card */
 .card{
@@ -525,7 +540,13 @@ a[class*="netlify"],a[href*="netlify.com"],div[class*="netlify"],iframe[src*="ne
 <main class="catalog" id="catalog">
   <div class="section-head">
     <h2 id="secTitle">全部产品</h2>
-    <span class="count" id="secCount"></span>
+    <div class="sec-right">
+      <span class="count" id="secCount"></span>
+      <div class="view-switch" role="group" aria-label="视图切换">
+        <button class="view-btn active" data-view="single" aria-pressed="true"><span data-i18n="viewSingle">单排</span></button>
+        <button class="view-btn" data-view="double" aria-pressed="false"><span data-i18n="viewDouble">双排</span></button>
+      </div>
+    </div>
   </div>
   <div class="result-line" id="resultLine"></div>
   <div class="grid" id="grid"></div>
@@ -649,7 +670,7 @@ var I18N = {
     heroTitle:'产品目录',
     heroSub:'面向摩洛哥及北非市场的汽车配件电子目录，覆盖发动机、传动、照明、车身、制动、悬挂转向、冷却、电气点火八大系统，中英法阿四语对照。',
     statCat:'系统分类',statItem:'产品条目',statLang:'四语',
-    all:'全部',items:'件产品',
+    all:'全部',items:'件产品',viewSingle:'单排',viewDouble:'双排',
     noResult:'未找到匹配的产品',noResultHint:'请尝试其他关键词，或切换分类查看全部产品。',
     searchPh:'搜索产品名称 / 编号 / OE号 / 车型…',
     code:'自编号',oe:'OE号',models:'适用车型',unit:'单位',seq:'序号',
@@ -671,7 +692,7 @@ var I18N = {
     heroTitle:'Product Catalogue',
     heroSub:'Electronic catalogue of auto parts for Morocco and North Africa: engine, transmission, lighting, body, brake, suspension & steering, cooling, electrical & ignition — in Chinese, English, French and Arabic.',
     statCat:'Systems',statItem:'Products',statLang:'4 Languages',
-    all:'All',items:'products',
+    all:'All',items:'products',viewSingle:'1 col',viewDouble:'2 col',
     noResult:'No matching product found',noResultHint:'Try other keywords, or switch category to view all products.',
     searchPh:'Search name / code / OE no. / vehicle model…',
     code:'Code',oe:'OE No.',models:'Vehicle Models',unit:'Unit',seq:'No.',
@@ -693,7 +714,7 @@ var I18N = {
     heroTitle:'Catalogue Produits',
     heroSub:'Catalogue électronique de pièces automobiles pour le Maroc et l\u2019Afrique du Nord : moteur, transmission, éclairage, carrosserie, freinage, suspension & direction, refroidissement, électrique & allumage — en chinois, anglais, français et arabe.',
     statCat:'Systèmes',statItem:'Produits',statLang:'4 Langues',
-    all:'Tous',items:'produits',
+    all:'Tous',items:'produits',viewSingle:'1 col.',viewDouble:'2 col.',
     noResult:'Aucun produit trouvé',noResultHint:'Essayez d\u2019autres mots-clés, ou changez de catégorie pour voir tous les produits.',
     searchPh:'Rechercher nom / code / réf. OE / modèle…',
     code:'Code',oe:'R\u00e9f. OE',models:'Modèles',unit:'Unité',seq:'No.',
@@ -715,7 +736,7 @@ var I18N = {
     heroTitle:'كتالوج المنتجات',
     heroSub:'كتالوج إلكتروني لقطع غيار السيارات موجّه إلى المغرب وشمال أفريقيا: المحرك، ناقل الحركة، الإضاءة، الهيكل، الفرامل، التعليق والتوجيه، التبريد، الكهرباء والإشعال — باللغات الصينية والإنجليزية والفرنسية والعربية.',
     statCat:'الأنظمة',statItem:'منتجات',statLang:'4 لغات',
-    all:'الكل',items:'منتجات',
+    all:'الكل',items:'منتجات',viewSingle:'عمود',viewDouble:'عمودان',
     noResult:'لم يتم العثور على منتج مطابق',noResultHint:'جرّب كلمات مفتاحية أخرى، أو بدّل الفئة لعرض جميع المنتجات.',
     searchPh:'ابحث عن اسم المنتج / الرقم / رقم OE / طراز السيارة…',
     code:'الرقم',oe:'رقم OE',models:'طرازات السيارات',unit:'الوحدة',seq:'رقم',
@@ -832,6 +853,7 @@ function translateModels(text, lang){
 /* ===== 状态 ===== */
 var state = {
   lang: 'zh',
+  view: 'single',   // single = 单排（默认）, double = 双排
   cat: -1,          // -1 = 全部
   query: '',
   list: [],          // 当前过滤后的产品（扁平索引）
@@ -1243,6 +1265,23 @@ document.addEventListener('keydown', function(e){
 });
 loadCart(); updateCartBadge(); renderCart();
 
+/* ===== 视图切换（单排 / 双排）===== */
+var VIEW_KEY = 'lm_view';
+function applyView(view){
+  state.view = (view === 'double') ? 'double' : 'single';
+  try{ localStorage.setItem(VIEW_KEY, state.view) }catch(e){}
+  var grid = document.getElementById('grid');
+  if(grid) grid.classList.toggle('two-col', state.view === 'double');
+  $$('.view-btn').forEach(function(b){
+    var on = b.getAttribute('data-view') === state.view;
+    b.classList.toggle('active', on);
+    b.setAttribute('aria-pressed', on ? 'true' : 'false');
+  });
+}
+$$('.view-btn').forEach(function(b){
+  b.addEventListener('click', function(){ applyView(b.getAttribute('data-view')) });
+});
+
 /* ===== 语言切换 ===== */
 function applyLang(lang){
   state.lang = lang;
@@ -1292,6 +1331,9 @@ function init(){
   try{ saved = localStorage.getItem('lm_lang') }catch(e){}
   var _bl = (navigator.language||'').toLowerCase();
   var detected = _bl.indexOf('ar')===0 ? 'ar' : (_bl.indexOf('fr')===0 ? 'fr' : 'zh');
+  var savedView = null;
+  try{ savedView = localStorage.getItem(VIEW_KEY) }catch(e){}
+  applyView(savedView === 'double' ? 'double' : 'single');
   applyLang(saved && ['zh','en','fr','ar'].indexOf(saved)>-1 ? saved : detected);
 }
 function loadData(){
