@@ -14,7 +14,7 @@
         "zh": "凸机",
         "en": "ENGINE",
         "fr": "Moteur nu",
-        "ar": "محرك عارٍ",
+        "ar": "محرك بدون ملحقات",
         "models": "465化/F10A/哈飞中意",
         "unit": "PCS",
         "img": "images/products/LBENG-1093-A3.jpeg"
@@ -26,7 +26,7 @@
         "zh": "凸机",
         "en": "ENGINE",
         "fr": "Moteur nu",
-        "ar": "محرك عارٍ",
+        "ar": "محرك بدون ملحقات",
         "models": "465QB",
         "unit": "PCS"
       },
@@ -37,7 +37,7 @@
         "zh": "凸机",
         "en": "ENGINE",
         "fr": "Moteur nu",
-        "ar": "محرك عارٍ",
+        "ar": "محرك بدون ملحقات",
         "models": "465EA",
         "unit": "PCS",
         "img": "images/products/LB001-ENG-1005-A1.jpeg"
@@ -49,7 +49,7 @@
         "zh": "凸机",
         "en": "ENGINE",
         "fr": "Moteur nu",
-        "ar": "محرك عارٍ",
+        "ar": "محرك بدون ملحقات",
         "models": "大宇达马斯/F8C",
         "unit": "PCS",
         "img": "images/products/LB001-ENG-1049-1.jpeg"
@@ -61,7 +61,7 @@
         "zh": "凸机",
         "en": "ENGINE",
         "fr": "Moteur nu",
-        "ar": "محرك عارٍ",
+        "ar": "محرك بدون ملحقات",
         "models": "465QA/小霸王",
         "unit": "PCS",
         "img": "images/products/LB001-ENG-1009-A1.jpeg"
@@ -73,7 +73,7 @@
         "zh": "凸机",
         "en": "ENGINE",
         "fr": "Moteur nu",
-        "ar": "محرك عارٍ",
+        "ar": "محرك بدون ملحقات",
         "models": "474",
         "unit": "PCS",
         "img": "images/products/LB001-ENG-1012-2.jpeg"
@@ -85,7 +85,7 @@
         "zh": "凸机",
         "en": "ENGINE",
         "fr": "Moteur nu",
-        "ar": "محرك عارٍ",
+        "ar": "محرك بدون ملحقات",
         "models": "368Q/奥拓/化",
         "unit": "PCS",
         "img": "images/products/LB001-ENG-1011-A1.jpeg"
@@ -97,7 +97,7 @@
         "zh": "凸机",
         "en": "ENGINE",
         "fr": "Moteur nu",
-        "ar": "محرك عارٍ",
+        "ar": "محرك بدون ملحقات",
         "models": "QQ372",
         "unit": "PCS",
         "img": "images/products/LB001-ENG-1020-A2.jpeg"
@@ -475,7 +475,7 @@
         "zh": "机盖中网",
         "en": "BUMPER GRILLE",
         "fr": "Grille de pare-chocs",
-        "ar": "شبكة غطاء المحرك",
+        "ar": "شبكة المصد الأمامي",
         "models": "东风小康K07",
         "unit": "SET",
         "img": "images/products/LB015-DFM1-4017-SET.jpeg"
@@ -487,7 +487,7 @@
         "zh": "拦板扣",
         "en": "GUARD BUCKLE",
         "fr": "Boucle de garde-corps",
-        "ar": "مشبك اللوح الجانبي للصندوق",
+        "ar": "مشبك لوح الصندوق الجانبي",
         "models": "东风小康K01/K02/V21/V22",
         "unit": "PCS",
         "img": "images/products/LB015-DFM1-4002.jpeg"
@@ -636,7 +636,7 @@
         "zh": "方向机防尘套",
         "en": "STEERING SHAFT DUST COVER",
         "fr": "Cache-poussière colonne direction",
-        "ar": "غطاء علبة التوجيه الواقي من الغبار",
+        "ar": "غطاء الغبار لعلبة التوجيه",
         "models": "开瑞优劲/开瑞优优/东风小康/长安之星/五菱荣光",
         "unit": "PCS"
       },
@@ -731,7 +731,7 @@
         "zh": "外球头L",
         "en": "OUTER BALL JOINT LEFT",
         "fr": "Rotule extérieure (Gauche)",
-        "ar": "رأس ذراع التوجيه الخارجي الأيسر",
+        "ar": "المفصل الكروي الخارجي الأيسر",
         "models": "东风小康V27/V21/之星/小康/福瑞达/C31/新之星M201",
         "unit": "PCS",
         "img": "images/products/LB012-DFM1-2114-HE-SET.jpeg"
@@ -906,7 +906,7 @@
         "zh": "分缸线",
         "en": "IGNITION CABLE",
         "fr": "Fils de bougie",
-        "ar": "كابل الإشعال",
+        "ar": "أسلاك شمعات الاحتراق",
         "models": "东风小康465Q1A",
         "unit": "SET",
         "img": "images/products/LB007-DFM1-1107-HB.jpeg"
@@ -918,7 +918,7 @@
         "zh": "分缸线",
         "en": "IGNITION CABLE",
         "fr": "Fils de bougie",
-        "ar": "كابل الإشعال",
+        "ar": "أسلاك شمعات الاحتراق",
         "models": "大宇马蹄子/雪佛兰斯帕克",
         "unit": "SET",
         "img": "images/products/LBDX-FGX-3210-B.jpeg"
