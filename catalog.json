@@ -336,7 +336,8 @@
         "fr": "Phare avant (Gauche)",
         "ar": "المصباح الأمامي الأيسر",
         "models": "大宇达马斯",
-        "unit": "PCS"
+        "unit": "PCS",
+        "img": "images/products/LB053-DY1-3001-L.png"
       },
       {
         "seq": "11",
@@ -347,7 +348,8 @@
         "fr": "Phare avant (Droit)",
         "ar": "المصباح الأمامي الأيمن",
         "models": "大宇达马斯",
-        "unit": "PCS"
+        "unit": "PCS",
+        "img": "images/products/LB053-DY1-3001-R.png"
       },
       {
         "seq": "12",
