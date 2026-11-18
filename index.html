@@ -1001,9 +1001,9 @@ function renderGrid(){
       + '</div>'
       + '<div><h3 class="card-name">'+esc(primary)+'</h3>'
       + '<p class="card-name-en">'+esc(secondary)+'</p></div>'
-      + '<div class="code-plate"><span class="cl">'+I18N[state.lang].code+'</span><span class="cv">'+esc(it.code)+'</span></div>'
+      + '<div class="code-plate"><span class="cl">'+I18N[state.lang].oe+'</span><span class="cv">'+esc(it.oe || '\u2014')+'</span></div>'
       + '<div class="card-meta">'
-      +   (it.oe ? '<div class="meta-row"><span class="ml">'+I18N[state.lang].oe+'</span><span class="mv">'+esc(it.oe)+'</span></div>' : '')
+      +   '<div class="meta-row"><span class="ml">'+I18N[state.lang].code+'</span><span class="mv" style="font-family:var(--mono)">'+esc(it.code)+'</span></div>'
       +   (modelHtml ? '<div class="meta-row"><span class="ml">'+I18N[state.lang].models+'</span><span class="mv">'+modelHtml+more+'</span></div>' : '')
       + '</div>'
       + '<div class="card-see" style="font-size:12px;color:var(--amber-deep);font-weight:600;letter-spacing:.3px">'+I18N[state.lang].seeMore+'</div>'
