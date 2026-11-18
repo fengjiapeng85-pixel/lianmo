@@ -5,7 +5,7 @@
     "en": "Engine System",
     "fr": "Système Moteur",
     "ar": "نظام المحرك",
-    "count": 16,
+    "count": 11,
     "items": [
       {
         "seq": "1",
@@ -137,64 +137,6 @@
         "models": "大宇达马斯/F8C",
         "unit": "SET",
         "img": "images/products/LBDY1-1074-0_50.jpeg"
-      },
-      {
-        "seq": "12",
-        "code": "LB004-DFM1-1005",
-        "oe": "",
-        "zh": "汽缸床",
-        "en": "CYLINDER HEAD",
-        "fr": "Culasse",
-        "ar": "رأس الأسطوانة",
-        "models": "465",
-        "unit": "PCS",
-        "img": "images/products/LB004-DFM1-1005.jpeg"
-      },
-      {
-        "seq": "13",
-        "code": "LB050-DY1-1017",
-        "oe": "",
-        "zh": "汽缸床",
-        "en": "CYLINDER HEAD",
-        "fr": "Culasse",
-        "ar": "رأس الأسطوانة",
-        "models": "F8C",
-        "unit": "PCS",
-        "img": "images/products/LB050-DY1-1017.jpeg"
-      },
-      {
-        "seq": "14",
-        "code": "LB007-DFM1-1116",
-        "oe": "",
-        "zh": "汽缸床",
-        "en": "CYLINDER HEAD",
-        "fr": "Culasse",
-        "ar": "رأس الأسطوانة",
-        "models": "474",
-        "unit": "PCS",
-        "img": "images/products/LB007-DFM1-1116.jpeg"
-      },
-      {
-        "seq": "15",
-        "code": "LB062-AT1-1018",
-        "oe": "",
-        "zh": "汽缸床",
-        "en": "CYLINDER HEAD",
-        "fr": "Culasse",
-        "ar": "رأس الأسطوانة",
-        "models": "368",
-        "unit": "PCS"
-      },
-      {
-        "seq": "16",
-        "code": "LB071-QQ-0005-M",
-        "oe": "",
-        "zh": "汽缸床",
-        "en": "CYLINDER HEAD",
-        "fr": "Culasse",
-        "ar": "رأس الأسطوانة",
-        "models": "QQ372",
-        "unit": "PCS"
       }
     ]
   },
@@ -476,7 +418,7 @@
     "en": "Body & Exterior",
     "fr": "Carrosserie et Extérieur",
     "ar": "الهيكل والقطع الخارجية",
-    "count": 18,
+    "count": 12,
     "items": [
       {
         "seq": "1",
@@ -489,30 +431,6 @@
         "models": "昌河1018/中意/大宇达马斯",
         "unit": "PCS",
         "img": "images/products/LB061-LM3-4001.jpeg"
-      },
-      {
-        "seq": "2",
-        "code": "LB061-LM3-4004-1-L",
-        "oe": "84701A85001",
-        "zh": "倒车镜L",
-        "en": "REAR VIEW MIRROR LEFT",
-        "fr": "Rétroviseur (Gauche)",
-        "ar": "المرآة الجانبية اليسرى",
-        "models": "大宇达马斯/新松花江/ 铃木CARRY ST-100",
-        "unit": "PCS",
-        "img": "images/products/LB061-LM3-4004-1-L.jpeg"
-      },
-      {
-        "seq": "3",
-        "code": "LB061-LM3-4004-1-R",
-        "oe": "84702A85001",
-        "zh": "倒车镜R",
-        "en": "REAR VIEW MIRROR RIGHT",
-        "fr": "Rétroviseur (Droit)",
-        "ar": "المرآة الجانبية اليمنى",
-        "models": "大宇达马斯/新松花江/ 铃木CARRY ST-100",
-        "unit": "PCS",
-        "img": "images/products/LB061-LM3-4004-1-R.jpeg"
       },
       {
         "seq": "4",
@@ -537,18 +455,6 @@
         "models": "东风小康康威/小康K01H/K01S/K05S/K07S",
         "unit": "PCS",
         "img": "images/products/LB016-DFM1-4027-1R.jpeg"
-      },
-      {
-        "seq": "6",
-        "code": "LBLM3-4013",
-        "oe": "94585464",
-        "zh": "后保",
-        "en": "REAR BUMPER",
-        "fr": "Pare-chocs arrière",
-        "ar": "المصد الخلفي",
-        "models": "昌河410/大宇达马斯",
-        "unit": "PCS",
-        "img": "images/products/LBLM3-4013.jpeg"
       },
       {
         "seq": "7",
@@ -585,29 +491,6 @@
         "models": "东风小康K01/K02/V21/V22",
         "unit": "PCS",
         "img": "images/products/LB015-DFM1-4002.jpeg"
-      },
-      {
-        "seq": "10",
-        "code": "LBDFM1-4151",
-        "oe": "2803010-CM01",
-        "zh": "前保",
-        "en": "FRONT BUMPER",
-        "fr": "Pare-chocs avant",
-        "ar": "المصد الأمامي",
-        "models": "小康K07S/K05S/K01S",
-        "unit": "PCS",
-        "img": "images/products/LBDFM1-4151.jpeg"
-      },
-      {
-        "seq": "11",
-        "code": "LB015-DFM1-4023",
-        "oe": "2803011-0B",
-        "zh": "前保",
-        "en": "FRONT BUMPER",
-        "fr": "Pare-chocs avant",
-        "ar": "المصد الأمامي",
-        "models": "小康K17",
-        "unit": "PCS"
       },
       {
         "seq": "12",
@@ -665,17 +548,6 @@
         "fr": "Serrure de porte avant (Gauche)",
         "ar": "قفل الباب الأمامي الأيمن",
         "models": "昌河1018/昌铃王/佳宝6350/T51/大宇达马斯",
-        "unit": "PCS"
-      },
-      {
-        "seq": "17",
-        "code": "LBLM3-4012",
-        "oe": "",
-        "zh": "前保",
-        "en": "FRONT BUMPER",
-        "fr": "Pare-chocs avant",
-        "ar": "المصد الأمامي",
-        "models": "大宇达马斯",
         "unit": "PCS"
       },
       {
